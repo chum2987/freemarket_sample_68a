@@ -8,7 +8,7 @@
 |email|string|null: false|
 |password|string|null: false, unipue: true|
 
-### Assosiation
+### Association
 - has_many :items
 - has_one :profile
 - has_one :credit_card
@@ -26,12 +26,12 @@
 |postal_code|integer(7)|null: false|
 |prefectures|string|null: false|
 |city|string|null: false|
-|adress|string|null: false|
+|address|string|null: false|
 |building_name|string|---|
 |phone_number|string|null:false, unique: true|
 |user_id|ireferences|null: false, foreign_key: true|
 
-### Assosiation
+### Association
 - belongs_to :user
 
 ## itemsテーブル
@@ -40,7 +40,7 @@
 |name|string|null: false|
 |price|integer|null: false|
 |description|text|null: false|
-|category_id|refernces: null: false|
+|category_id|references: null: false|
 |size|string|---|
 |brand|string|---|
 |condition|string|null: false|
@@ -50,7 +50,7 @@
 |buyer_id|integer||
 |seller_id|integer||
 
-### Assosiation
+### Association
 - belongs_to :user
 - has_many :item_images
 - has_many :categories
@@ -58,10 +58,10 @@
 ## item_imagesテーブル
 |Column|Type|Option|
 |------|----|------|
-|item_id|refernces|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 |image_url|string|null: false|
 
-### Assosiation
+### Association
 - belongs_to :item
 
 ## categoriesテーブル
@@ -70,7 +70,7 @@
 |name|string|null: false|
 |ancestry|string|---|
 
-### Assosiation
+### Association
 - belongs_to :item
 
 ## credit_cardsテーブル
@@ -84,5 +84,5 @@
 |security_code|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
 
-### Assosiation
+### Association
 - belong_to :user
