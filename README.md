@@ -53,7 +53,7 @@
 ### Association
 - belongs_to :user
 - has_many :item_images
-- has_many :categories
+- belongs_to :category
 
 ## item_imagesテーブル
 |Column|Type|Option|
@@ -71,7 +71,7 @@
 |ancestry|string|---|
 
 ### Association
-- belongs_to :item
+- has_many :items
 
 ## credit_cardsテーブル
 |Column|Type|Option|
