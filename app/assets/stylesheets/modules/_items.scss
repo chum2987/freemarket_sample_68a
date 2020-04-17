@@ -1,6 +1,6 @@
 body {
   font-family: YuGothic;
-  // ヘッダー(111行目まで)
+  // ヘッダー(112行目まで)
   header {
     width: 100vw;
     height: 110px;
@@ -110,6 +110,7 @@ body {
       }
     }
   }
+// フッターの上のバナー(170行目まで)
   .app-banner {
     height: 360px;
     position: relative;
@@ -141,7 +142,7 @@ body {
           text-shadow: 0 0 5px rgba(0,0,0,0.4)
         }
       }
-  
+      
       &__icon {
         margin: 20px auto 0;
         display: flex;
@@ -166,11 +167,8 @@ body {
         }
       }
     }
-    
-  
-    
   }
-  // フッター 
+// フッター 
   footer {
     padding: 60px 0;
     color: white;
