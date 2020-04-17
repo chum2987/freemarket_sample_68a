@@ -8,78 +8,12 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     %header
-      .header__main
-        .header__main__top
-          .header__main__top__title
-            = image_tag src= "/assets/material/logo/logo.png", class: "title-logo"
-          .header__main__top__search
-            .header__main__top__search__box
-              %input{placeholder: "キーワードから探す", type: "text", class: "search-box"}
-            .header__main__top__search__button
-              %button{type: "submit", class: "submit-btn"}
-                .header__main__top__search__button__icon
-                  = image_tag src= "/assets/material/icon/icon-search 1.png", class: "serach-icon"
-        .header__main__bottom
-          .header__main__bottom__left
-            .header__main__bottom__left__category
-              = link_to "カテゴリー", "#", class: "header-btn"
-            .header__main__bottom__left__brand
-              = link_to "ブランド", "#", class: "header-btn"
-          .header__main__bottom__right
-            .header__main__bottom__right__login
-              = link_to "ログイン", "#", class: "header-btn"
-            .header__main__bottom__right__signup
-              = link_to "新規会員登録", "#", class: "header-btn"
+      = render "layouts/header"
 
     = yield
+    
     .app-banner
-      = image_tag src= "/assets/material/pict/bg-appBanner-pict.jpg"
-      .app-banner__inner
-        .app-banner__inner__text
-          %h2
-            だれでもかんたん、人生を変えるアプリ
-          %p 今すぐ無料ダウンロード
-        .app-banner__inner__icon
-          .app-banner__inner__icon__left
-            %a{:href => "/"}
-              = image_tag src= "/assets/material/logo/appstore-logo.png"
-          .app-banner__inner__icon__right
-            %a{:href => "/"}
-              = image_tag src= "/assets/material/logo/googleplay.png"
+      = render "layouts/app-banner"
 
     %footer
-      %ul.contents
-        %li.content
-          %h2 
-            FURIMAについて
-          %ul
-            %li
-              %a 会社概要 (運営会社)
-            %li
-              %a プライバシーポリシー
-            %li
-              %a FURIMA利用規約
-            %li
-              %a ポイントに関する特約
-        %li.content
-          %h2 
-            FURIMAを見る
-          %ul
-            %li
-              %a カテゴリー一覧
-            %li
-              %a ブランド一覧
-        %li.content
-          %h2 
-            ヘルプ&ガイド
-          %ul
-            %li
-              %a FURIMAガイド
-            %li
-              %a FURIMAロゴ利用ガイドライン
-            %li
-              %a お知らせ
-      .footer__logo
-        %a{:href => "/"}
-          = image_tag src ="/assets/material/logo/logo-white.png"
-      %p.footer__text @FURIMA            
+      = render "layouts/footer"
