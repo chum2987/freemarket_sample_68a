@@ -19,10 +19,6 @@
               %button{type: "submit", class: "submit-btn"}
                 .header__main__top__search__button__icon
                   = image_tag src= "/assets/material/icon/icon-search 1.png", class: "serach-icon"
-            -# .header__main__top__search__submit
-            -#   .header__main__top__search__submit__box
-            -#     .header__main__top__search__submit__box__icon
-            -#       = image_tag src= "/assets/material/icon/icon-search 1.png", class: "serach-icon"
         .header__main__bottom
           .header__main__bottom__left
             .header__main__bottom__left__category
@@ -36,3 +32,54 @@
               = link_to "新規会員登録", "#", class: "header-btn"
 
     = yield
+    .app-banner
+      = image_tag src= "/assets/material/pict/bg-appBanner-pict.jpg"
+      .app-banner__inner
+        .app-banner__inner__text
+          %h2
+            だれでもかんたん、人生を変えるアプリ
+          %p 今すぐ無料ダウンロード
+        .app-banner__inner__icon
+          .app-banner__inner__icon__left
+            %a{:href => "/"}
+              = image_tag src= "/assets/material/logo/appstore-logo.png"
+          .app-banner__inner__icon__right
+            %a{:href => "/"}
+              = image_tag src= "/assets/material/logo/googleplay.png"
+
+    %footer
+      %ul.contents
+        %li.content
+          %h2 
+            FURIMAについて
+          %ul
+            %li
+              %a 会社概要 (運営会社)
+            %li
+              %a プライバシーポリシー
+            %li
+              %a FURIMA利用規約
+            %li
+              %a ポイントに関する特約
+        %li.content
+          %h2 
+            FURIMAを見る
+          %ul
+            %li
+              %a カテゴリー一覧
+            %li
+              %a ブランド一覧
+        %li.content
+          %h2 
+            ヘルプ&ガイド
+          %ul
+            %li
+              %a FURIMAガイド
+            %li
+              %a FURIMAロゴ利用ガイドライン
+            %li
+              %a お知らせ
+      .footer__logo
+        %a{:href => "/"}
+          = image_tag src ="/assets/material/logo/logo-white.png"
+      %p.footer__text @FURIMA            

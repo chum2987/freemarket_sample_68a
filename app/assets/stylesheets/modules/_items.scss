@@ -1,8 +1,11 @@
+body {
+  font-family: YuGothic;
+}
+// ヘッダー(111行目まで)
 header {
   width: 100vw;
   height: 110px;
   padding: 0 60px;
-  font-family: YuGothic;
 
   .header__main {
     max-width: 1040px;
@@ -106,5 +109,122 @@ header {
         }
       }
     }
+  }
+}
+.app-banner {
+  height: 360px;
+  position: relative;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__inner {
+    position: absolute;
+    text-align: center;
+    top: 100px;
+    right:500px;
+
+    &__text {
+      color: white;
+
+      h2 {
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 1.4;
+      }
+      
+      p {
+        font-size: 35px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4)
+      }
+    }
+
+    &__icon {
+      margin: 20px auto 0;
+      display: flex;
+      justify-content: center;
+
+      &__left {
+
+        img {
+          width: 160px;
+          height:50px;
+          margin:10px;
+        }
+      }
+
+      &__right {
+
+        img {
+          width: 160px;
+          height: 50px;
+          margin:10px;
+        }
+      }
+    }
+  }
+  
+
+  
+}
+// フッター 
+footer {
+  padding: 60px 0;
+  color: white;
+  background-color: #272727;
+  text-align: center;
+
+  ul.contents {
+    max-width: 840px;
+    margin: 0 auto;
+    display: flex;
+
+    li.content {
+      display: flex;
+      flex-direction: column;
+      width: calc(1 / 3 * 100%);
+      margin: 0 2% 0 0;
+
+      h2 {
+        margin: 0 0 20px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      ul {
+        list-style: none;
+        font-size: 12px;
+
+        li {
+          margin: 10px;
+
+          a {
+            cursor: pointer;
+          }
+
+          a:hover {
+            border-bottom-style: solid;
+            border-bottom-color: white;
+            border-bottom-width: 0.5px;
+          }
+        }
+      }
+    }
+  }
+  .footer__logo {
+    max-width: 160px;
+    width: 100%;
+    margin: 0 auto;
+
+    img {
+      width: 160px;
+    }
+  }
+  .footer__text {
+    font-size: 14px;
   }
 }
