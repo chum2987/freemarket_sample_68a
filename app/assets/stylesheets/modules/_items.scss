@@ -1,1 +1,111 @@
+header {
+  width: 100vw;
+  height: 110px;
+  padding: 0 60px;
+  font-family: "游ゴシック体";
 
+  .header__main {
+    max-width: 1040px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    background-color: white;
+
+    &__top {
+      display: flex;
+
+      &__title {
+
+        img {
+          width: 140px;
+        }
+      }
+
+      &__search {
+        display: flex;
+        padding-left: 35px;
+        padding-top: 4px;
+        height: 36px;
+        width: 100%;
+
+        &__box {
+          width: 100%;
+          
+          .search-box {
+            // width: 600px;
+            height: 36px;
+            padding: 0 0 0 5px;
+            width: 100%
+          }
+        }
+
+        &__button {
+
+          .submit-btn {
+            width: 36px;
+            height: 36px;
+            background-color: #3CCACE;
+            border: 0;
+            padding: 0px;
+          }
+
+          &__icon {
+
+            img { 
+              width: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    &__bottom {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-top: 10px;
+      
+      &__left {
+        display: flex;
+
+        &__category {
+
+          .header-btn {
+            text-decoration: none;
+            color: #555;
+          }
+        }
+
+        &__brand {
+          margin-left: 44px;
+
+          .header-btn {
+            text-decoration: none;
+            color: #555;
+          }
+        }
+      }
+
+      &__right {
+        display: flex;
+
+        &__login {
+          margin-right: 20px;
+
+          .header-btn {
+            text-decoration: none;
+            color: #555;
+          }
+        }
+
+        &__signup {
+
+          .header-btn {
+            text-decoration: none;
+            color: #555;
+          }
+        }
+      }
+    }
+  }
+}
