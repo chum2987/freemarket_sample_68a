@@ -2,7 +2,7 @@ header {
   width: 100vw;
   height: 110px;
   padding: 0 60px;
-  font-family: "游ゴシック体";
+  font-family: 游ゴシック体;
 
   .header__main {
     max-width: 1040px;
@@ -32,7 +32,6 @@ header {
           width: 100%;
           
           .search-box {
-            // width: 600px;
             height: 36px;
             padding: 0 0 0 5px;
             width: 100%
