@@ -1,0 +1,42 @@
+-# メールアドレス、Google何で登録するか
+:css
+  header {
+    display: none;
+  }
+
+  .app-banner {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
+.step1
+  .header
+    .header__logo
+      = link_to (image_tag src="/assets/material/logo/logo.png"), root_path   
+  .main
+    .main__content
+      .main__content__title
+        %p 新規会員登録
+      .main__content__registration
+        .main__content__registration__email
+          = link_to "メールアドレスで登録する", step2_signup_index_path
+          = icon("far", "envelope")
+        .main__content__registration__facebook
+          = link_to "Facebookで登録する", "#"
+          = icon("fab", "facebook-square")    
+        .main__content__registration__google
+          = link_to "Googleで登録する", "#"
+          = icon("fab", "google")
+  .registration__footer
+    %ul
+      %li 
+        = link_to "プライバシーポリシー", "#"
+      %li 
+        = link_to "メルカリ利用規約", "#"
+      %li 
+        = link_to "特定商取引に関する表記", "#"
+    .registration__footer__logo
+      = link_to (image_tag src="/assets/material/logo/logo.png"), root_path
+    %p ©︎ FURIMA, Inc.
