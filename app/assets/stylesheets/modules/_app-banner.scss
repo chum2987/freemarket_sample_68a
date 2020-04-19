@@ -1,0 +1,58 @@
+.app-banner {
+  height: 360px;
+  position: relative;
+  font-family: YuGothic;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__inner {
+    position: absolute;
+    text-align: center;
+    top: 100px;
+    right:500px;
+
+    &__text {
+      color: white;
+
+      h2 {
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 1.4;
+      }
+      
+      p {
+        font-size: 35px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4)
+      }
+    }
+    
+    &__icon {
+      margin: 20px auto 0;
+      display: flex;
+      justify-content: center;
+
+      &__left {
+
+        img {
+          width: 160px;
+          height:50px;
+          margin:10px;
+        }
+      }
+
+      &__right {
+
+        img {
+          width: 160px;
+          height: 50px;
+          margin:10px;
+        }
+      }
+    }
+  }
+}
