@@ -19,8 +19,6 @@ ActiveRecord::Schema.define(version: 20200416132317) do
     t.string   "first_name",                          null: false
     t.string   "family_name_kana",                    null: false
     t.string   "first_name_kana",                     null: false
-    t.date     "birth_year",                          null: false
-    t.date     "birth_month",                         null: false
     t.date     "birth_day",                           null: false
     t.integer  "phone_number",                        null: false
     t.string   "encrypted_password",     default: "", null: false

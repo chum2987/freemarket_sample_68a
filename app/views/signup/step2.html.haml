@@ -1,1 +1,95 @@
 -# ニックネーム、本名、誕生日
+:css
+  header {
+    display: none;
+  }
+
+  .app-banner {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
+
+.step2
+  .header
+    .header__left
+      %a(href="/")
+        = image_tag src="/assets/material/logo/logo.png"
+    .header__right
+      .header__right__top
+        %ol
+          %li.red 会員情報
+          %li 電話番号認証
+          %li 完了
+      .header__right__bottom
+  .main
+    .main__content
+      .main__content__title
+        %p 会員情報入力
+      .main__content__form
+        = form_for @user, url: step3_signup_index_path, method: :get do |f|
+          .main__content__form__group
+            = f.label :nickname, "ニックネーム", class: "title"
+            %span 必須
+            = f.text_field :nickname, placeholder: '例) メルカリ太郎', class:"input"
+          .main__content__form__group
+            = f.label :email, "メールアドレス", class: "title"
+            %span 必須
+            = f.email_field :email, placeholder: 'PC・携帯どちらでも可', class:"input"
+          .main__content__form__group
+            = f.label :password, "パスワード", class: "title"
+            %span 必須
+            = f.password_field :password, placeholder: '７文字以上の半角英数字', class:"input"
+            %p.asterisk ※英字と数字の両方を含めて設定してください
+
+            -# チェックボックス
+          .main__content__form__group
+            %h2
+              本人確認
+            %p.text 
+              安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+
+          .main__content__form__group
+            %label.title お名前（全角）
+            %span 必須
+            %br
+            = f.text_field :family_name, placeholder: '例）山田', class:"input-half"
+            = f.text_field :first_name, placeholder: '例）花子', class:"input-half"
+          .main__content__form__group          
+            %label.title お名前（カナ）
+            %span 必須
+            %br
+            = f.text_field :family_name_kana, placeholder: '例）ヤマダ', class:"input-half"
+            = f.text_field :first_name_kana, placeholder: '例）ハナコ', class:"input-half"
+          .main__content__form__group          
+            %label.title 生年月日
+            %span 必須
+            %br
+            .main__content__form__group__birth
+              = f.label :birth_day, class: "input-birth" do
+                = f.date_select :birth_day, {use_month_numbers: true,start_year: 1900, end_year: (Time.now.year)}, {class: "input-birth"}
+
+            %p.asterisk
+              ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          .main__content__form__group
+            %p.next-text
+              「次へ進む」のボタンを押すことにより、
+              = link_to "利用規約", "#", class: "terms"
+              に同意したものとみなします
+          .main__content__form__group
+            = f.submit "次へ進む", class: "next"
+          .main__content__form__group
+            .main__content__form__group__right
+              = link_to "本人情報の登録について", "#"
+          .main__content__form__group
+            .main__content__form__group__bottom
+              %p
+                This site is protected by reCAPTCHA and the Google 
+                = link_to "Privacy Policy", "#"
+                and 
+                = link_to "Terms of Service", "#" 
+                apply.
+  .registration-footer       
+    = render "signup/registration-footer"
