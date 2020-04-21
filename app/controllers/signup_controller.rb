@@ -28,7 +28,7 @@ class SignupController < ApplicationController
   def step5
   end
 
-  
+
 
   private
 
@@ -41,7 +41,8 @@ class SignupController < ApplicationController
       :first_name, 
       :family_name_kana, 
       :first_name_kana, 
-      :birth_day
+      :birth_day,
+      :phone_number
     )
   end
 end
