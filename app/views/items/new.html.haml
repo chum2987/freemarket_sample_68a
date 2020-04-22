@@ -1,1 +1,52 @@
-商品出品
+.product-listing
+  %header.header-logo
+    %h1
+      = link_to root_path do
+        = image_tag src= "/assets/material/logo/logo.png", class: "title-logo"
+  %main.sell-main
+    .sell-main__upload-box
+      .sell-main__image-title
+        %h3
+          出品画像
+        %span.sell-main__require 必須
+      %p 最大10枚までアップロードできます
+      .sell-main__image-box
+        .image-box__container
+
+    .sell-main__content
+      .form-group
+        %label
+          商品名
+          %span
+            必須
+        %input{placeholder: "40文字まで", type: "text", class: "input-default"}
+      .form-group
+        %label
+          商品の説明
+          %span
+            必須
+          %textarea{class: "new-form-area", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
+    .sell-main__content.clearfix
+      %h3.sell-main__sub-head
+        商品の詳細
+      .sell-form-box
+        .form-group
+          %label
+            カテゴリー
+            %span
+              必須
+        .form-group
+          %label
+            ブランド
+            %span.select
+              任意
+        .form-group
+          %label
+            商品の状態
+            %span
+              必須
+    .sell-main__content.clearfix
+      %h3
+        配送について
+
+
