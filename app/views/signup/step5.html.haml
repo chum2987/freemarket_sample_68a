@@ -1,1 +1,44 @@
 -# 完了画面
+:css
+  header {
+    display: none;
+  }
+
+  .app-banner {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
+
+.step5
+
+  .header
+
+    .header__left
+      = link_to (image_tag src="/assets/material/logo/logo.png"), root_path
+
+    .header__right
+      .header__right__top
+        %ol
+          %li 会員情報
+          %li 電話番号認証
+          %li.red 完了
+
+      .header__right__bottom
+
+  .main
+    .main__content
+      .main__content__title
+        %p 完了
+      .main__content__form
+        .main__content__form__group
+          %p  ありがとうございます。
+          %p  会員登録が完了しました。
+
+        .main__content__form__group
+          = link_to "メルカリをはじめる", root_path
+
+  .registration-footer       
+    = render "signup/registration-footer"

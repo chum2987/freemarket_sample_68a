@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "items#index"
   resources :items, only: [:index, :new, :show]
   resources :users, only: [:show, :new]
-  resources :signup do
+  resources :signup, only: [:create] do
     collection do
       get 'step1' #新規会員登録
       get 'step2' #会員情報入力

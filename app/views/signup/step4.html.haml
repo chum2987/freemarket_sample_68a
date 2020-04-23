@@ -35,7 +35,7 @@
         %p 電話番号認証
 
       .main__content__form
-        = form_for @user, url: step4_signup_index_path, method: :get do |f|
+        = form_for @user, url: step5_signup_index_path, method: :get do |f|
 
           .main__content__form__group
             %h2 認証番号
@@ -47,6 +47,7 @@
             %h2 30秒たっても認証番号が届かない方へ
             %p 電話で認証番号を聞くこともできます。
             = link_to "電話で認証番号を聞く（通話無料）", "#", class: "tell"
+            
           .main__content__form__group
             %h2 認証番号を再送することもできます。もう一度電話番号を入力して下さい。
             = link_to "電話番号を再度入力する", step3_signup_index_path, class: "return"
@@ -54,4 +55,7 @@
               ※SMSが届かない場合は
               = link_to "SMS受信設定", "#"
               を確認して、もう一度電話番号を入力してください。
+  
+  .registration-footer       
+    = render "signup/registration-footer"
         
