@@ -1,24 +1,11 @@
-.mypage {
-  width: 1020px;
-  margin: 0 auto;
-  padding: 40px 0;
-  display: flex;
-  justify-content: space-between;
-}
+.main {
+  background: #f5f5f5;
 
-.mypage-nav {
-  width: 280px;
-
-  &__list {
-
-    a {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 48px;
-      text-decoration: none;
-      color: black;
-
-    }
+  &__mypage {
+    margin: 0 auto;
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 1020px;
   }
 }
