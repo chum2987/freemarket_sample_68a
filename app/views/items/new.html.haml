@@ -1,52 +1,126 @@
 .product-listing
-  %header.header-logo
+  .header-logo
     %h1
       = link_to root_path do
         = image_tag src= "/assets/material/logo/logo.png", class: "title-logo"
-  %main.sell-main
-    .sell-main__upload-box
-      .sell-main__image-title
-        %h3
+  %main.sell-main__container
+    .sell-main__inner
+      .sell-main__upload-box
+        %h3.sell-main__image-title
           出品画像
-        %span.sell-main__require 必須
-      %p 最大10枚までアップロードできます
-      .sell-main__image-box
-        .image-box__container
+        %span.sell-main__require
+          必須
+        %p 最大10枚までアップロードできます
+        .sell-main__image-box
+          .image-box__container
 
-    .sell-main__content
-      .form-group
-        %label
-          商品名
-          %span
-            必須
-        %input{placeholder: "40文字まで", type: "text", class: "input-default"}
-      .form-group
-        %label
-          商品の説明
-          %span
-            必須
-          %textarea{class: "new-form-area", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
-    .sell-main__content.clearfix
-      %h3.sell-main__sub-head
-        商品の詳細
-      .sell-form-box
+      .sell-main__content
         .form-group
           %label
-            カテゴリー
-            %span
+            商品名
+            %span.sell-main__require
               必須
+          %input{placeholder: "40文字まで", type: "text", class: "input-default"}
         .form-group
           %label
-            ブランド
-            %span.select
-              任意
-        .form-group
-          %label
-            商品の状態
-            %span
+            商品の説明
+            %span.sell-main__require
               必須
-    .sell-main__content.clearfix
-      %h3
-        配送について
+            %textarea{class: "new-form-area", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
+      .sell-main__content.clearfix
+        %h3.sell-main__sub-head
+          商品の詳細
+        .sell-form-box
+          .form-group
+            %label
+              カテゴリー
+              %span.sell-main__require
+                必須
+          .form-group
+            %label
+              ブランド
+              %span.select
+                任意
+          .form-group
+            %label
+              商品の状態
+              %span.sell-main__require
+                必須
+      .sell-main__content.clearfix
+        %h3.sell-main__image-title
+          配送について
+        =link_to "?", '#'
+        .sell-form-box
+          .form-group
+            %label
+              配送料の負担
+              %span.sell-main__require
+                必須
+          .form-group
+            %label
+              発送元の地域
+              %span.sell-main__require
+                必須
+          .form-group
+            %label
+              発送までの日数
+              %span.sell-main__require
+                必須
+      .sell-main__price.clearfix
+        %h3.sell-main__image-title
+          価格（¥300〜9,999,999)
+        = link_to "?", '#'
+        .sell-form-box
+          %ul
+            %li.price-group
+              .clear-fix
+                .sell-price-title
+                  %label
+                    販売価格
+                    %span.sell-main__require
+                      必須
+                .sell-price-input
+                  %p
+                    ￥
+            %li.price-group.border
+              .clearfix
+                .sell-price-title
+                  販売手数料(10%)
+                .sell-price-input
+                  .right
+            %li.price-group.border
+              .clearfix
+                .sell-price-profit
+                  販売履歴
+                .sell-price-input
+                  .right
+      .sell-main-content
+        .sell-main__exhibit
+        =link_to "#", class: "sell-main__btn sell-main__btn--exhibition" do
+          出品する
+        =link_to "#", class: "sell-main__btn sell-main__btn--draft" do
+          下書きに保存
+        =link_to "#", class: "sell-main__btn sell-main__btn--return" do
+          もどる
+        %div.terms
+          %p
+            禁止されている
+            = link_to '行為', '#', target: 'blank'
+            および
+            = link_to '出品物', '#', target: 'blank'
+            を必ずご確認ください。
+            = link_to '偽ブランド品', '#', target: 'blank'
+            や
+            = link_to '盗品物', '#', target: 'blank'
+            などの販売は犯罪であり、法律に
+            %br
+            より処罰される可能性があります。また、出品をもちまして
+            = link_to '加盟店契約', '#', target: 'blank'
+            に同意したことになります。
+
+
+            
+
+
 
 

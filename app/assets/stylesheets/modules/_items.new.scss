@@ -1,13 +1,83 @@
+header {
+  display: none;
+}
+
+.app-banner {
+  display: none;
+}
+
+footer {
+  display: none;
+}
+
+.product-listing {
+  padding-bottom: 250px;
+  background-color: #efefef;
+}
+
 .header-logo{
   text-align: center;
   h1 {
-
+    display: inline-block;
+    margin: 40px 0 40px;
   }
   a {
-
+    display: inline-block;
+    width: 185px;
+    height: 49px;
   }
   img {
     width: 185px;
     height: 49px;
   }
 }
+
+.sell-main{
+  &__container {
+    display: block;
+    background-color: #fff;
+    width: 700px;
+    margin: 0 auto;
+  }
+  &__upload-box {
+    height: 300px;
+    border-bottom: solid 1px #efefef;
+  }
+  &__content {
+    height: 350px;
+    border-bottom: solid 1px #efefef;
+  }
+  &__require {
+    background: #ea352d;
+    color: #fff;
+    padding: 2px 4px;
+    border-radius: 2px;
+    margin-left: 8px;
+    font-size: 12px;
+  }
+  &__image-title {
+    display: inline-block;
+  }
+  &__price {
+    height: 200px;
+  }
+  &__btn{
+    display: block;
+    width: 360px;
+    height: 48px;
+    margin: 0 auto 50px;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 48px;
+    &--exhibition {
+      background: #ea352d;
+      color: #fff;
+    }
+    &--draft {
+      background: #ccc;
+      color: #222;
+    }
+  }
+}
+
