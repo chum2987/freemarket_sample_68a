@@ -1,7 +1,7 @@
 -# ①人生を振り返るフリマアプリ
 .main
   .main_image
-    -# = image_tag src= "/assets/material/pict/pict-reason-01.jpg"
+    = image_tag src= "/assets/material/pict/bg-mainVisual-pict_pc.jpg"
     .content
       .content_title
         %p 人生を変えるフリマアプリ
@@ -31,7 +31,7 @@
           = image_tag src= "/assets/material/pict/pict-reason-01.jpg"
         .list_text
           %h1 3分 ですぐに出品
-        %h2 スマホで入力するだけで簡単に出品ができる!
+          %h2 スマホで入力するだけで簡単に出品ができる!
       %li.list
         .list_pict
           .list_pict--number
@@ -39,7 +39,7 @@
           = image_tag src= "/assets/material/pict/pict-reason-02.jpg"
         .list_text
           %h1 シンプル で使いやすい
-        %h2 めんどくさい入力は必要なく、検索も購入もスムーズ！
+          %h2 めんどくさい入力は必要なく、検索も購入もスムーズ！
       %li.list
         .list_pict
           .list_pict--number
@@ -47,27 +47,160 @@
           = image_tag src= "/assets/material/pict/pict-reason-03.jpg"
         .list_text
           %h1 手数料 業界最安
-        %h2 最大3%でお得に出品&購入！
+          %h2 最大3%でお得に出品&購入！
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
+  -# ③会員数日本一位
   .sub_image
+    = image_tag src= "/assets/material/pict/bg-topMiddleDl-pict.jpg"
+    .image_inner
+      .image_inner--title
+        %h3 会員数日本１位
+      .image_inner--text
+        FURIMAは、フリマアプリで最も人気。
+        %p 出品・購入回数も業界最多です！
+        %p ほしかったあの商品に出会えるかもしれません。
+      .image_inner--btn
+        %a{:href => "/"}
+          = image_tag src= "/assets/material/logo/appstore-logo.png"
+        %a{:href => "/"}
+          = image_tag src= "/assets/material/logo/google-logo.png"
+
+
+
+
+
+
+
+
+
+
+
+
+  -# ④FURIMAの特徴
   .furima_future
+    .title
+      %p FURIMAの特徴
+    %ul.lists
+      %li.list
+        .list_pict
+          = image_tag src= "/assets/material/icon/icon-01.png"
+        .list_text
+          %h1 簡単に売り買いできる
+          %h2 スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      %li.list
+        .list_pict
+          = image_tag src= "/assets/material/icon/icon-03.png"
+        .list_text
+          %h1 売上金は即日振込みに対応
+          %h2 午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+      %li.list
+        .list_pict
+          = image_tag src= "/assets/material/icon/icon-04.png"
+        .list_text
+          %h1 様々な支払いに対応
+          %h2 お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+
+
+
+
+
+
+
+
+
+
+  -# ⑤ピックアップカテゴリ
   .picup_category
+    %h2 ピックアップカテゴリ
+    .category_box
+      .box_title　新規投稿商品
+      %a(href = "/")
+      .box_lists
+        .box_lists--list
+          %a(href="/products/3")
+            .image
+              %img(src="/assets/material/logo/saba.png" alt="")/
+            .text
+              %h3 product3
+              .price
+                %ul
+                  %li 30000円
+                  %li 
+                    %i.fa.fa-star 0
+                %p (税込)
+        .box_lists--list
+          %a(href="/products/3")
+            .image
+              %img(src="/assets/material/logo/sasami.png" alt="")/
+            .text
+              %h3 product3
+              .price
+                %ul
+                  %li 30000円
+                  %li 
+                    %i.fa.fa-star 0
+                %p (税込)
+        .box_lists--list
+          %a(href="/products/3")
+            .image
+              %img(src="/assets/material/logo/kare.png" alt="")/
+            .text
+              %h3 product3
+              .price
+                %ul
+                  %li 30000円
+                  %li 
+                    %i.fa.fa-star 0
+                %p (税込)
 
 
 
 
-  
+
+  .picup_category
+    %h2 ピックアップブランド
+    .category_box
+      .box_title　アーカイバ
+      %a(href = "/")
+      .box_lists
+        .box_lists--list
+          %a(href="/products/3")
+            .image
+              %img(src="/assets/material/logo/saba.png" alt="")/
+            .text
+              %h3 product3
+              .price
+                %ul
+                  %li 30000円
+                  %li 
+                    %i.fa.fa-star 0
+                %p (税込)
+        .box_lists--list
+          %a(href="/products/3")
+            .image
+              %img(src="/assets/material/logo/sasami.png" alt="")/
+            .text
+              %h3 product3
+              .price
+                %ul
+                  %li 30000円
+                  %li 
+                    %i.fa.fa-star 0
+                %p (税込)
+        .box_lists--list
+          %a(href="/products/3")
+            .image
+              %img(src="/assets/material/logo/kare.png" alt="")/
+            .text
+              %h3 product3
+              .price
+                %ul
+                  %li 30000円
+                  %li 
+                    %i.fa.fa-star 0
+                %p (税込)
+
