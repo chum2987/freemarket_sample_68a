@@ -1,0 +1,10 @@
+.main
+  .main__mypage
+    = render "shared/mypage-nav"
+    .mypage-signout
+      %form.mypage-signout__form
+        .mypage-signout__form__content
+          %btn.mypage-signout__form__content__btn
+            = link_to "ログアウト", '#'
+
+
