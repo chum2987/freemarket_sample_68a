@@ -3,4 +3,6 @@ class UsersController < ApplicationController
   end
   def signout
   end
+  def card
+  end
 end
