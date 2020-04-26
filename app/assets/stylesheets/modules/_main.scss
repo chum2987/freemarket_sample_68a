@@ -9,11 +9,11 @@
     display: flex;
     align-items: center;
     background-color: skyblue;
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
     .content {
       position: absolute;
       margin: 0 140px 0 140px;
@@ -310,7 +310,6 @@
           a {
             text-decoration: none;
           }
-          
           .image {
             width: 220px;
             // height: 150px;
