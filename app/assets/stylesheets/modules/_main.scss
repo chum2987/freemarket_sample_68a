@@ -117,10 +117,12 @@
             margin: 0 0 0 2px;
           }
           span {
-            color:#3CCACE;
             font-size: 24px;
             line-height: 50px;
             margin: 0 0 0 2px;
+            color: black;
+            font-weight: bold;
+            color:#3CCACE;
           }
           h1 {
             font-weight: bold;
@@ -129,6 +131,7 @@
             margin: 0 0 0 2px;
           }
           h2 {
+            color: black;
             font-size: 18px;
             line-height: 1.5;
             margin: 16px 0 0;
