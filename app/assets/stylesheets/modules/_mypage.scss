@@ -1,6 +1,6 @@
 .main {
-  background: #f5f5f5;
-
+  width: 100%;
+  background-color: #f5f5f5;
   &__mypage {
     margin: 0 auto;
     padding: 40px 0;
@@ -9,20 +9,17 @@
     width: 1020px;
   }
 }
+
   .mypage-nav {
     width: 280px;
     margin-right: 40px;
-
     &__head {
       margin-top: 40px;
       font-size: 16px;
     }
-
     &__list {
       width: 100%;
-
       a {
-        // position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -33,13 +30,11 @@
         border-top: solid 1px #eee;
         padding: 16px;
         }
-
         p {
           font-size: 14px;
           color: #333;
           line-height: 1;
         }
-
         i {
           color: #ccc;
         }
