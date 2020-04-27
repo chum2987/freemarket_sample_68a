@@ -1,1 +1,119 @@
-商品詳細
+.navbar
+  %ul.navbar__lists
+    %li
+      = link_to "FURIMA", "#", class: "navbar__lists--content"
+    %li
+      = icon("fas", "fa-angle-right")
+    %li
+      = link_to "ベビー・キッズ", "#", class: "navbar__lists--content"
+    %li
+      = icon("fas", "fa-angle-right")
+    %li
+      = link_to "ベビー服(男女兼用)~95cm", "#", class: "navbar__lists--content"
+    %li
+      = icon("fas", "fa-angle-right")
+    %li
+      = link_to "アウター", "#", class: "navbar__lists--content"
+    %li
+      = icon("fas", "fa-angle-right")
+    %li
+      = link_to "product1", "#", class: "navbar__lists--content"
+.main
+  .item
+    .item__name
+      product1
+    %ul.item__images
+      %li
+        = image_tag src="https://www.pakutaso.com/shared/img/thumb/kakurerukijishironeko171027_TP_V.jpg", class: "item__images--main"
+        %ul.item__images--others
+          %li
+            = image_tag src="https://3.bp.blogspot.com/-_QezxlYH2Tg/VIKmxI9lvnI/AAAAAAAApX8/TyFLC_O7zgA/s800/christmas_baby.png", class: "other"
+          %li.other
+            = image_tag src="https://www.pakutaso.com/shared/img/thumb/017kumakichi0327_TP_V.jpg", class: "other"
+          %li.other__last
+            = image_tag src="https://www.pakutaso.com/shared/img/thumb/babyFTHG7633_TP_V.jpg", class: "other"
+    .item__price
+      .item__price--yen
+        ¥10000
+      .item__prise--detail
+        %span.tax
+          (税込)
+        %span.fee
+          送料込み
+    .item__body
+      親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから
+    %table.item__table
+      %tr
+        %th.item__table--header
+          出品者
+        %td.item__table--data
+          hoge
+      %tr.item__table--row
+        %th.item__table--header
+          カテゴリー
+        %td.item__table--data
+          = link_to "ベビー・キッズ", "#", class: "link"
+          %br
+          = link_to "ベビー服(男女兼用)~95cm", "#", class: "link"
+          %br
+          = link_to "アウター", "#", class: "link"
+      %tr.item__table--row
+        %th.item__table--header
+          ブランド
+        %td.item__table--data
+      %tr.item__table--row
+        %th.item__table--header
+          商品のサイズ
+        %td.item__table--data
+      %tr.item__table--row
+        %th.item__table--header
+          商品の状態
+        %td.item__table--data
+          未使用に近い
+      %tr.item__table--row
+        %th.item__table--header
+          発送料の負担
+        %td.item__table--data
+          送料込み（出品者負担）
+      %tr.item__table--row
+        %th.item__table--header
+          発送元の地域
+        %td.item__table--data
+          = link_to "岩手県", "#", class: "link"
+      %tr.item__table--row
+        %th.item__table--header
+          発送日の目安
+        %td.item__table--data
+          4-7日で発送
+    .item__option
+      .item__option__like
+        = icon("fas", "fa-star")
+        お気に入り 0
+      %a.item__option__report( href = "#" )
+        = icon("far", "far-flag")
+        不適切な商品の通報
+  .comment
+    %textarea.comment__body
+    .comment__notes
+      相手のことを考え丁寧なコメントを心がけましょう。
+      %br
+      不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    .comment__btn
+      %button{type: "submit", class: 'comment__btn--submit'}
+        = icon("fas", "fa-comment")
+        コメントする
+  .links
+    %a.links__left( href = "#" )
+      = icon("fa", "fa-angle-left")
+      前の商品
+    %a.links__right( href = "#" )
+      後ろの商品
+      = icon("fas", "fa-angle-right")
+  .reration
+    %a.reration__content( href = "#" )
+      ベビー・キッズをもっと見る
+%a.exhibit-btn( href = "#")
+  .exhibit-btn__text
+    出品する
+  .exhibit-btn__image
+    = image_tag src ="/assets/material/icon/icon_camera.png", size: "54x54"
