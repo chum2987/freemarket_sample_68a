@@ -99,43 +99,33 @@
           font-size: 14px;
           border: 1px solid #dedede;
         }
-
         &--data {
           border: 1px solid #dedede;
           padding: 15px;
           font-size: 14px;
-
           .link {
             text-decoration: none;
             color: #3CCACE;
           }
-
         }
-
     }
-
     &__option {
       display: flex;
       justify-content: space-between;
-
       &__like {
         color: #3CCACE;
         border-radius: 40px;
         border: 1px solid #fbb340;
         padding: 6px 10px;
         font-size: 14px;
-
         &:hover {
           opacity: 0.5;
         }
-        
         .fas:before {
           content: "\f005";
           padding-right: 5px;
         }
-        
       }
-
       &__report {
         border-radius: 4px;
         border: 1px solid #333;
@@ -143,21 +133,16 @@
         color: #333;
         padding: 6px 10px;
         text-decoration: none;
-
         &:hover {
           cursor: pointer;
           opacity: 0.5;
         }
-
         .far:before {
           content: "\f024";
           padding-right: 5px;
         }
-
       }
-
     }
-
   }
 
   .comment {
@@ -165,24 +150,20 @@
     margin: 10px auto;
     width: 700px;
     background-color: #fff;
-
     &__body {
       width: 100%;
       padding: 10px;
       min-height: 104px;
     }
-
     &__notes {
       font-size: 14px;
       padding: 8px;
       margin: 10px 0;
       background-color: #f8f8f8;
     }
-
     &__btn {
       text-align: center;
       padding-top: 20px;
-
       &--submit {
       width: 60%;
       line-height: 48px;
@@ -191,41 +172,31 @@
       background-color: #3CCACE;
       border: 1px solid #3CCACE;
       border-radius: 100px;
-
         .fas:before {
           content: "\f075";
           padding-right: 5px;
         }
-
       }
-
     }
-
   }
-
   .links {
     margin: 10px auto;
     width: 700px;
     display: flex;
     justify-content: space-between;
-
     &__left {
       text-decoration: none;
       color: #3CCACE;
-
       .fa:before {
         content: "\f104";
         -webkit-font-smoothing: antialiased;
         -webkit-text-stroke-color: #fff;
         -webkit-text-stroke-width: 1px;
       }
-
     }
-
     &__right {
       text-decoration: none;
       color: #3CCACE;
-
       .fas:after {
         content: "\f105";
         -webkit-font-smoothing: antialiased;
@@ -233,13 +204,10 @@
         -webkit-text-stroke-width: 1px;
       }
     }
-
   }
-
   .reration {
     margin: 24px auto;
     width: 700px;
-
     &__content {
       margin: 0 0 8px;
       text-decoration: none;
@@ -248,7 +216,6 @@
       font-size: 22px;
     }
   }
-
 }
 
 .exhibit-btn {
@@ -263,17 +230,11 @@
   text-align: center;
   color: #fff;
   z-index: 9999;
-
   &:hover {
     cursor: pointer;
     opacity: 0.9;
   }
-
   &__test {
     font-size: 18px;
   }
-
-  &__image {
-  }
-
 }
