@@ -132,14 +132,17 @@
         font-size: 14px;
         color: #333;
         padding: 6px 10px;
-        text-decoration: none;
         &:hover {
           cursor: pointer;
           opacity: 0.5;
         }
-        .far:before {
+        .fas:before {
           content: "\f024";
           padding-right: 5px;
+        }
+        &--link {
+          text-decoration: none;
+          color: #333;
         }
       }
     }
@@ -226,15 +229,15 @@
   bottom: 32px;
   right: 32px;
   position: fixed;
-  text-decoration: none;
   text-align: center;
-  color: #fff;
   z-index: 9999;
   &:hover {
     cursor: pointer;
     opacity: 0.9;
   }
-  &__test {
+  &__text {
     font-size: 18px;
+    text-decoration: none;
+    color: #fff;
   }
 }

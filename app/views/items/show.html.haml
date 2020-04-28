@@ -24,14 +24,14 @@
       product1
     %ul.item__images
       %li
-        = image_tag src="https://www.pakutaso.com/shared/img/thumb/kakurerukijishironeko171027_TP_V.jpg", class: "item__images--main"
+        = image_tag "https://www.pakutaso.com/shared/img/thumb/kakurerukijishironeko171027_TP_V.jpg", class: "item__images--main"
         %ul.item__images--others
           %li
-            = image_tag src="https://3.bp.blogspot.com/-_QezxlYH2Tg/VIKmxI9lvnI/AAAAAAAApX8/TyFLC_O7zgA/s800/christmas_baby.png", class: "other"
+            = image_tag "https://3.bp.blogspot.com/-_QezxlYH2Tg/VIKmxI9lvnI/AAAAAAAApX8/TyFLC_O7zgA/s800/christmas_baby.png", class: "other"
           %li.other
-            = image_tag src="https://www.pakutaso.com/shared/img/thumb/017kumakichi0327_TP_V.jpg", class: "other"
+            = image_tag "https://www.pakutaso.com/shared/img/thumb/017kumakichi0327_TP_V.jpg", class: "other"
           %li.other__last
-            = image_tag src="https://www.pakutaso.com/shared/img/thumb/babyFTHG7633_TP_V.jpg", class: "other"
+            = image_tag "https://www.pakutaso.com/shared/img/thumb/babyFTHG7633_TP_V.jpg", class: "other"
     .item__price
       .item__price--yen
         ¥10000
@@ -89,9 +89,9 @@
       .item__option__like
         = icon("fas", "fa-star")
         お気に入り 0
-      %a.item__option__report( href = "#" )
-        = icon("far", "far-flag")
-        不適切な商品の通報
+      .item__option__report
+        = icon("fas", "far-flag")
+        = link_to "不適切な商品の通報", "#", class: "item__option__report--link"
   .comment
     %textarea.comment__body
     .comment__notes
@@ -103,17 +103,15 @@
         = icon("fas", "fa-comment")
         コメントする
   .links
-    %a.links__left( href = "#" )
+    .links__left
       = icon("fa", "fa-angle-left")
-      前の商品
-    %a.links__right( href = "#" )
-      後ろの商品
+      = link_to "前の商品", "#", class: "links__left"
+    .links__right
+      = link_to "後ろの商品", "#", class: "links__right"
       = icon("fas", "fa-angle-right")
   .reration
-    %a.reration__content( href = "#" )
-      ベビー・キッズをもっと見る
-%a.exhibit-btn( href = "#")
-  .exhibit-btn__text
-    出品する
+    = link_to "ベビー・キッズをもっと見る", "#", class: "reration__content"
+.exhibit-btn
+  = link_to "出品する", "#", class: "exhibit-btn__text"
   .exhibit-btn__image
-    = image_tag src ="/assets/material/icon/icon_camera.png", size: "54x54"
+    = image_tag "/assets/material/icon/icon_camera.png", size: "54x54"
