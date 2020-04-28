@@ -1,0 +1,62 @@
+:css
+  header {
+    display: none;
+  }
+
+  .app-banner {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
+
+.new-phone
+
+  .header
+
+    .header__left
+      = link_to (image_tag src="/assets/material/logo/logo.png"), root_path
+
+    .header__right
+      .header__right__top
+        %ol
+          %li 会員情報
+          %li.red 電話番号認証
+          %li 完了
+
+      .header__right__bottom
+        .header__right__bottom__before
+        .header__right__bottom__after
+        .header__right__bottom__dot
+          .dot1
+          .dot2 
+          .dot3 
+
+  .main
+    .main__content
+
+      .main__content__title
+        %p 電話番号の確認
+
+      .main__content__form
+        = form_for @phone do |f|
+          = render "devise/shared/error_messages", resource: @phone
+
+          .main__content__form__group
+            %h2
+              携帯の電話番号
+            = f.text_field :phone_number, placeholder: '携帯の電話番号を入力', class:"input"
+            %p.phone_number-text
+              本人確認のため、携帯電話 のSMS(ショートメッセージサービス)を利用して認証を行います。
+            
+          .main__content__form__group
+            = f.submit "次へ進む", class: "next"
+            %p.sms-text
+              ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+
+          .main__content__form__group
+            = link_to "電話番号の確認が必要な理由", "#"
+
+  .registration-footer       
+    = render "devise/registrations/registration-footer"
