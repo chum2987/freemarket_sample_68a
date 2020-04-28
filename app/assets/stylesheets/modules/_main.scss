@@ -262,6 +262,9 @@
             position: relative;
             margin-bottom: 20px;
             width: 70%;
+            .img {
+              width: 100%;
+            }
           }
           &__text {
             font-weight: bold;
@@ -280,9 +283,6 @@
               margin: 16px 0 0;
             }
           }
-        }
-        .img {
-          width: 100%;
         }
       }
     }
