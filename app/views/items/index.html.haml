@@ -1,7 +1,7 @@
 -# ①人生を振り返るフリマアプリ
 .main
   .main__image
-    = image_tag src= "/assets/material/pict/bg-mainVisual-pict_pc.jpg"
+    = image_tag "/assets/material/pict/bg-mainVisual-pict_pc.jpg", class: "img"
     .content
       .content__title
         %p 人生を変えるフリマアプリ
@@ -11,11 +11,10 @@
       .content__btn
         .app
           %a{href: "/"}
-            = image_tag src= "/assets/material/logo/appstore-logo.png"
+            = image_tag "/assets/material/logo/appstore-logo.png", class: "img"
         .google
           %a{href: "/"}
-            = image_tag src= "/assets/material/logo/google-logo.png"
-  
+            = image_tag "/assets/material/logo/google-logo.png", class: "img"
   
   
   
@@ -29,7 +28,7 @@
         .list__pict
           .list__pict--number
           %p 1
-          = image_tag src= "/assets/material/pict/pict-reason-01.jpg"
+          = image_tag "/assets/material/pict/pict-reason-01.jpg", class: "img"
         .list__text
           %h1 
             %span 3分
@@ -40,7 +39,7 @@
         .list__pict
           .list__pict--number
           %p 2
-          = image_tag src= "/assets/material/pict/pict-reason-02.jpg"
+          = image_tag "/assets/material/pict/pict-reason-02.jpg", class: "img"
         .list__text
           %h1
             %span シンプル
@@ -51,7 +50,7 @@
         .list__pict
           .list__pict--number
           %p 3
-          = image_tag src= "/assets/material/pict/pict-reason-03.jpg"
+          = image_tag "/assets/material/pict/pict-reason-03.jpg", class: "img"
         .list__text--last
           %h1
             手数料
@@ -74,9 +73,9 @@
         %p ほしかったあの商品に出会えるかもしれません。
       .image__inner--btn
         %a{href: "/"}
-          = image_tag src= "/assets/material/logo/appstore-logo.png"
+          = image_tag "/assets/material/logo/appstore-logo.png", class: "img"
         %a{href: "/"}
-          = image_tag src= "/assets/material/logo/google-logo.png"
+          = image_tag "/assets/material/logo/google-logo.png", class: "img"
 
 
 
@@ -96,19 +95,19 @@
     %ul.lists
       %li.list
         .list__pict
-          = image_tag src= "/assets/material/icon/icon-01.png"
+          = image_tag "/assets/material/icon/icon-01.png", class: "img"
         .list__text
           %h1 簡単に売り買いできる
           %h2 スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
       %li.list
         .list__pict
-          = image_tag src= "/assets/material/icon/icon-03.png"
+          = image_tag "/assets/material/icon/icon-03.png", class: "img"
         .list__text
           %h1 売上金は即日振込みに対応
           %h2 午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
       %li.list
         .list__pict
-          = image_tag src= "/assets/material/icon/icon-04.png"
+          = image_tag "/assets/material/icon/icon-04.png", class: "img"
         .list__text
           %h1 様々な支払いに対応
           %h2 お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
