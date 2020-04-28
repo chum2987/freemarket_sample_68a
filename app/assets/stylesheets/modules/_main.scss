@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     background-color: skyblue;
-      img {
+      .img {
         height: 100%;
         width: 100%;
         object-fit: cover;
@@ -45,7 +45,7 @@
         }
         .google {
           a {
-            img {
+            .img {
               width: 160px;
               height:50px;
               margin:10px;
@@ -120,7 +120,7 @@
                 background-color: #3CCACE;
                 color: #fff;
               }
-                img {
+                .img {
                   width: 100%;
                 }
           }
@@ -202,7 +202,7 @@
         &--btn {
           display: flex;
           a {
-            img {
+            .img {
               width: 160px;
               height:50px;
               margin:10px;
@@ -281,7 +281,7 @@
             }
           }
         }
-        img {
+        .img {
           width: 100%;
         }
       }
