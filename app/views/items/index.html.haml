@@ -1,6 +1,6 @@
 -# ①人生を振り返るフリマアプリ
-.main
-  .main__image
+.main2
+  .main2__image
     = image_tag "/assets/material/pict/bg-mainVisual-pict_pc.jpg", class: "img"
     .content
       .content__title
@@ -97,13 +97,13 @@
   .pickup-category
     %h2 ピックアップカテゴリ
     .category-box
-      .box__title　新規投稿商品
-      %a(href = "/")
+      .box__title
+      = link_to "新規投稿商品","#", class: "box__title"
       .box__lists
         .box__lists--list
           = link_to "#", class: "box__lists--list" do
             .image
-              %img(src="/assets/material/logo/saba.png" alt="")/
+              = image_tag "/assets/material/logo/saba.png"
             .text
               %h3 product3
               .price
@@ -115,7 +115,7 @@
         .box__lists--list
           = link_to "#", class: "box__lists--list" do
             .image
-              %img(src="/assets/material/logo/sasami.png" alt="")/
+              = image_tag "/assets/material/logo/sasami.png"
             .text
               %h3 product3
               .price
@@ -127,7 +127,7 @@
         .box__lists--list
           = link_to "#", class: "box__lists--list" do
             .image
-              %img(src="/assets/material/logo/kare.png" alt="")/
+              =image_tag "/assets/material/logo/kare.png"
             .text
               %h3 product3
               .price
@@ -141,13 +141,13 @@
   .pickup-category
     %h2 ピックアップブランド
     .category-box
-      .box__title　アーカイバ
-      %a(href = "/")
+      .box__title
+      = link_to "アーカイバ","#", class: "box__title"
       .box__lists
         .box__lists--list
           = link_to "#", class: "box__lists--list" do
             .image
-              %img(src="/assets/material/logo/saba.png" alt="")/
+              = image_tag "/assets/material/logo/saba.png"
             .text
               %h3 product3
               .price
@@ -159,7 +159,7 @@
         .box__lists--list
           = link_to "#", class: "box__lists--list" do
             .image
-              %img(src="/assets/material/logo/sasami.png" alt="")/
+              = image_tag "/assets/material/logo/sasami.png"
             .text
               %h3 product3
               .price
@@ -171,7 +171,7 @@
         .box__lists--list
           = link_to "#", class: "box__lists--list" do
             .image
-              %img(src="/assets/material/logo/kare.png" alt="")/
+              = image_tag "/assets/material/logo/kare.png"
             .text
               %h3 product3
               .price
