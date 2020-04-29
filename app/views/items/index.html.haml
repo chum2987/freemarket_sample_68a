@@ -10,14 +10,12 @@
         %p フリマアプリです
       .content__btn
         .app
-          %a{href: "/"}
+          = link_to "#", class: "app" do
             = image_tag "/assets/material/logo/appstore-logo.png", class: "img"
         .google
-          %a{href: "/"}
+          = link_to "#", class: "google" do
             = image_tag "/assets/material/logo/google-logo.png", class: "img"
-  
-  
-  
+
   -# ②FURIMAが選ばれる3つの理由
   .three-reasons
     .title
@@ -34,7 +32,6 @@
             %span 3分
             ですぐに出品
             %h2 スマホで入力するだけで簡単に出品ができる!
-
       %li.list
         .list__pict
           .list__pict--number
@@ -45,7 +42,6 @@
             %span シンプル
             で使いやすい
             %h2 めんどくさい入力は必要なく、検索も購入もスムーズ！
-
       %li.list
         .list__pict
           .list__pict--number
@@ -56,10 +52,6 @@
             手数料
             %span 業界最安
             %h2 最大3%でお得に出品&購入！
-
-
-
-
 
   -# ③会員数日本一位
   .sub-image
@@ -72,21 +64,10 @@
         %p 出品・購入回数も業界最多です！
         %p ほしかったあの商品に出会えるかもしれません。
       .image__inner--btn
-        %a{href: "/"}
+        = link_to "#", class: "image__inner--btn" do
           = image_tag "/assets/material/logo/appstore-logo.png", class: "img2"
-        %a{href: "/"}
+        = link_to "#", class: "image__inner--btn" do
           = image_tag "/assets/material/logo/google-logo.png", class: "img2"
-
-
-
-
-
-
-
-
-
-
-
 
   -# ④FURIMAの特徴
   .furima_future
@@ -112,15 +93,6 @@
           %h1 様々な支払いに対応
           %h2 お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
 
-
-
-
-
-
-
-
-
-
   -# ⑤ピックアップカテゴリ
   .pickup-category
     %h2 ピックアップカテゴリ
@@ -129,7 +101,7 @@
       %a(href = "/")
       .box__lists
         .box__lists--list
-          %a(href="/products/3")
+          = link_to "#", class: "box__lists--list" do
             .image
               %img(src="/assets/material/logo/saba.png" alt="")/
             .text
@@ -141,7 +113,7 @@
                     %i.fa.fa-star 0
                 %p (税込)
         .box__lists--list
-          %a(href="/products/3")
+          = link_to "#", class: "box__lists--list" do
             .image
               %img(src="/assets/material/logo/sasami.png" alt="")/
             .text
@@ -153,7 +125,7 @@
                     %i.fa.fa-star 0
                 %p (税込)
         .box__lists--list
-          %a(href="/products/3")
+          = link_to "#", class: "box__lists--list" do
             .image
               %img(src="/assets/material/logo/kare.png" alt="")/
             .text
@@ -164,10 +136,6 @@
                   %li 
                     %i.fa.fa-star 0
                 %p (税込)
-
-
-
-
 
   -# ⑥ピックアップブランド
   .pickup-category
@@ -177,7 +145,7 @@
       %a(href = "/")
       .box__lists
         .box__lists--list
-          %a(href="/products/3")
+          = link_to "#", class: "box__lists--list" do
             .image
               %img(src="/assets/material/logo/saba.png" alt="")/
             .text
@@ -189,7 +157,7 @@
                     %i.fa.fa-star 0
                 %p (税込)
         .box__lists--list
-          %a(href="/products/3")
+          = link_to "#", class: "box__lists--list" do
             .image
               %img(src="/assets/material/logo/sasami.png" alt="")/
             .text
@@ -201,7 +169,7 @@
                     %i.fa.fa-star 0
                 %p (税込)
         .box__lists--list
-          %a(href="/products/3")
+          = link_to "#", class: "box__lists--list" do
             .image
               %img(src="/assets/material/logo/kare.png" alt="")/
             .text
@@ -212,4 +180,3 @@
                   %li 
                     %i.fa.fa-star 0
                 %p (税込)
-

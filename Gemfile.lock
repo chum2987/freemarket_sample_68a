@@ -76,6 +76,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    erb2haml (0.1.5)
+      html2haml
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.12.2)
@@ -244,6 +246,7 @@ DEPENDENCIES
   capistrano3-unicorn
   coffee-rails (~> 4.2)
   devise
+  erb2haml
   font-awesome-sass
   haml-rails
   jbuilder (~> 2.5)
