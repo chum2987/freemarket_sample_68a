@@ -4,7 +4,6 @@ class PhonesController < ApplicationController
   end
 
   def create
-    binding.pry
     @user = User.new(session["devise.regist_data"]["user"])
     @phone = Phone.new(phone_params)
     @user.build_phone(@phone.attributes)
