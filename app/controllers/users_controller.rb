@@ -4,4 +4,11 @@ class UsersController < ApplicationController
 
   def new
   end
+
+  def signout
+  end
+
+  def card
+  end
+
 end

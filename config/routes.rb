@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    registrations: 'users/registrations',
+    registrations: 'users/registrations'
   }
   devise_scope :user do
     get 'phones', to: 'users/registrations#new_phone'
@@ -8,17 +8,10 @@ Rails.application.routes.draw do
   end
   root to: "items#index"
   resources :items, only: [:index, :new, :show]
-  resources :users, only: [:show, :new]
-  resources :signup, only: [:create] do
-    collection do
-      get 'user_registration' #新規会員登録
-      get 'new_user' #会員情報入力
-      post 'create_user' 
-      get 'new_phone' #電話番号入力
-      post 'create_phone' 
-      get 'new_sms' #認証番号入力
-      post 'create_sms'
-      get 'complete' #完了
+  resources :users, only: [:show, :new] do
+    member do
+      get "signout"
+      get "card"
     end
   end
   resources :phones, only: [:new, :create]
