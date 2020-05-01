@@ -224,3 +224,42 @@ footer {
   }
 }
 
+.registration-footer {
+  width: 456px;
+  height: 220px;
+  margin: 0 auto;
+  padding: 40px;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+
+    li {
+
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+    }
+  }
+  
+  &__logo {
+    margin: 40px auto 0;
+    width: 100px;
+    
+
+    a {
+
+      img {
+        width: 100px;
+      }
+    }
+  }
+
+  p {
+    font-size: 10px;
+    text-align: center;
+  }
+}
+
