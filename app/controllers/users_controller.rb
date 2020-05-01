@@ -2,7 +2,13 @@ class UsersController < ApplicationController
   def show
   end
 
-  def signout; end
+  def new
+  end
 
-  def card; end
+  def signout
+  end
+
+  def card
+  end
+
 end
