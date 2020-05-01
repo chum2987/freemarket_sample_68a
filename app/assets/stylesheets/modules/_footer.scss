@@ -68,7 +68,6 @@ footer {
     right: 32px;
     position: fixed;
     
-    
     a {
       width: 100%;
       height: 100%;
@@ -84,5 +83,10 @@ footer {
     img {
       margin-top: 28px;
     }
+  }
+
+  .exhibition-btn:hover {
+    opacity: 0.8;
+    filter: brightness(100%);
   }
 }
