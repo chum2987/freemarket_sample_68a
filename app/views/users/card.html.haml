@@ -1,0 +1,18 @@
+.main
+  .main__mypage
+    = render "shared/mypage-nav"
+    .mypage-card
+      .mypage-card__head
+        支払い方法
+      .mypage-card__inner
+        .mypage-card__inner__head
+          クレジットカード一覧
+        .mypage-card__inner__add-card
+          .mypage-card__inner__add-card__content
+            = link_to "#" do
+              %i.fas.fa-credit-card
+              %p クレジットカードを追加する
+        .mypage-card__inner__method-pay
+          = link_to "#" do
+            %p 支払い方法について
+            %i.fas.fa-chevron-right

@@ -1,0 +1,89 @@
+.mypage-content {
+  width: 700px;
+  .mypage-user {
+    height: 200px;
+    background-color: #3CCACE;
+    &__icon {
+      padding: 20px;
+      text-align: center;
+      color: #333;
+      &__image {
+        width: 60px;
+        height: 60px;
+      }
+      &__nickname {
+        margin: 8px 0 0;
+        font-size: 14px;
+      }
+      &__number {
+        margin: 8px 0 0 ;
+        display: flex;
+        justify-content: center;
+        color: #333;
+        &__exhibition {
+          margin: 0 0 0 16px;
+        }
+      }
+    }
+  }
+  .mypage-tab-container-notification-todo {
+    height: 310px;
+    .mypage-tabs {
+      height: 74px;
+      background-color: #eee;
+      display: flex;
+      text-align: center;
+      line-height: 74px;
+      font-size: 18px;
+      color: #333;
+      &__notice {
+        width: 50%;
+      }
+      &__todo {
+        width: 50%;
+      }
+    }
+    .mypage-tabs-content {
+      height: 326px;
+      background-color:white;
+      font-size: 16px;
+      color: #ccc;
+      text-align: center;
+      padding: 160px 0 60px;
+    }
+  }
+  .mypage-tab-container {
+    padding-top: 40px;
+    background-color: #f5f5f5;
+    height: 382px;
+    .mypage-tab-head {
+      height: 72px;
+      line-height: 72px;
+      font-size: 16px;
+      background-color: #fafafa;
+    }
+    .mypage-tabs {
+      display: flex;
+      background-color: #eee;
+      height: 74px;
+      text-align: center;
+      line-height: 74px;
+      font-size: 18px;
+      color: #333;
+      &__trading {
+        width: 50%;
+      }
+      &__traded {
+        width: 50%;
+      }
+    }
+    .mypage-tabs-content {
+      height: 326px;
+      background-color:white;
+      font-size: 16px;
+      color: #ccc;
+      text-align: center;
+      padding: 160px 0 60px;
+    }
+  }
+}
