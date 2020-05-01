@@ -9,7 +9,6 @@
 @import "modules/create-phone";
 @import "modules/devise-new-sessions";
 @import "modules/registration-footer";
-@import "modules/items.new";
 @import "modules/items.show";
 @import "modules/mypage";
 @import "modules/mypage-content";
@@ -17,6 +16,7 @@
 @import "modules/mypage-card";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "modules/items.new";
 
 * {
   box-sizing: border-box;
