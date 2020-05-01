@@ -2,12 +2,9 @@
   height: 360px;
   position: relative;
   font-family: YuGothic;
-
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
+  background-image: image-url("/assets/material/pict/bg-appBanner-pict.jpg");
+  background-position: center;
+  background-size: cover;
 
   &__inner {
     position: absolute;
