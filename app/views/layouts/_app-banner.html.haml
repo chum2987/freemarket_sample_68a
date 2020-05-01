@@ -6,8 +6,6 @@
     %p 今すぐ無料ダウンロード
   .app-banner__inner__icon
     .app-banner__inner__icon__left
-      %a{:href => "/"}
-        = image_tag src= "/assets/material/logo/appstore-logo.png"
+      = link_to (image_tag src= "/assets/material/logo/appstore-logo.png")
     .app-banner__inner__icon__right
-      %a{:href => "/"}
-        = image_tag src= "/assets/material/logo/googleplay.png"
+      = link_to (image_tag src= "/assets/material/logo/googleplay.png")
