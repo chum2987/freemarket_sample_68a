@@ -40,7 +40,7 @@
 |name|string|null: false|
 |price|integer|null: false|
 |description|text|null: false|
-|category_id|references: null: false|
+|category_id|references|null: false|
 |size|string|---|
 |brand|string|---|
 |condition|string|null: false|

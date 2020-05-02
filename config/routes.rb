@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     post 'phones', to: 'users/registrations#create_phone'
   end
   root to: "items#index"
-  resources :items, only: [:index, :new, :show]
+  resources :items
   resources :users, only: [:show, :new] do
     member do
       get "signout"
