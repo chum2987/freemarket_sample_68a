@@ -25,7 +25,7 @@
 |Column|Type|Option|
 |------|----|------|
 |phone_number|text|null:false, unique: true|
-|user_id|references|null: false, foreign_key: true|o
+|user_id|references|null: false, foreign_key: true|
 
 ### Assciation
 - belongs_to :user
