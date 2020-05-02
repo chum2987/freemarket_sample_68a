@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20200429093230) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.index ["category_id_id"], name: "index_items_on_category_id_id", using: :btree
-ActiveRecord::Schema.define(version: 20200427144630) do
+  end
 
   create_table "phones", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "phone_number", limit: 65535, null: false
