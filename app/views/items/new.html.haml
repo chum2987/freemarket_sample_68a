@@ -140,14 +140,5 @@
           より処罰される可能性があります。また、出品をもちまして
           = link_to '加盟店契約', '#', target: 'blank', class: 'terms--links'
           に同意したことになります。
-  .registration-footer      
-    %ul
-      %li 
-        = link_to "プライバシーポリシー", "#"
-      %li 
-        = link_to "メルカリ利用規約", "#"
-      %li 
-        = link_to "特定商取引に関する表記", "#"
-    .registration-footer__logo
-      = link_to (image_tag src="/assets/material/logo/logo.png"), root_path
-    %p ©︎ FURIMA, Inc.
+  .registration-footer
+    =render 'devise/registrations/registration-footer'
