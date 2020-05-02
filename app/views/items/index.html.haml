@@ -1,1 +1,182 @@
-トップページ
+-# ①人生を振り返るフリマアプリ
+.main2
+  .main2__image
+    = image_tag "/assets/material/pict/bg-mainVisual-pict_pc.jpg", class: "img"
+    .content
+      .content__title
+        %p 人生を変えるフリマアプリ
+      .content__subtitle
+        %p フリマはだれでもかんたんに出品・購入できる
+        %p フリマアプリです
+      .content__btn
+        .app
+          = link_to "#", class: "app" do
+            = image_tag "/assets/material/logo/appstore-logo.png", class: "img"
+        .google
+          = link_to "#", class: "google" do
+            = image_tag "/assets/material/logo/google-logo.png", class: "img"
+
+  -# ②FURIMAが選ばれる3つの理由
+  .three-reasons
+    .title
+      %h2.subtitle FURIMAが選ばれる3つの理由
+    %ul.lists
+
+      %li.list
+        .list__pict
+          .list__pict--number
+          %p 1
+          = image_tag "/assets/material/pict/pict-reason-01.jpg", class: "img"
+        .list__text
+          %h1 
+            %span 3分
+            ですぐに出品
+            %h2 スマホで入力するだけで簡単に出品ができる!
+      %li.list
+        .list__pict
+          .list__pict--number
+          %p 2
+          = image_tag "/assets/material/pict/pict-reason-02.jpg", class: "img"
+        .list__text
+          %h1
+            %span シンプル
+            で使いやすい
+            %h2 めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.list
+        .list__pict
+          .list__pict--number
+          %p 3
+          = image_tag "/assets/material/pict/pict-reason-03.jpg", class: "img"
+        .list__text--last
+          %h1
+            手数料
+            %span 業界最安
+            %h2 最大3%でお得に出品&購入！
+
+  -# ③会員数日本一位
+  .sub-image
+    = image_tag "/assets/material/pict/bg-topMiddleDl-pict.jpg", class: "img"
+    .image__inner
+      .image__inner--title
+        %h3 会員数日本１位
+      .image__inner--text
+        FURIMAは、フリマアプリで最も人気。
+        %p 出品・購入回数も業界最多です！
+        %p ほしかったあの商品に出会えるかもしれません。
+      .image__inner--btn
+        = link_to "#", class: "image__inner--btn" do
+          = image_tag "/assets/material/logo/appstore-logo.png", class: "img2"
+        = link_to "#", class: "image__inner--btn" do
+          = image_tag "/assets/material/logo/google-logo.png", class: "img2"
+
+  -# ④FURIMAの特徴
+  .furima_future
+    .title
+      %h2 FURIMAの特徴
+    %ul.lists
+      %li.list
+        .list__pict
+          = image_tag "/assets/material/icon/icon-01.png", class: "img"
+        .list__text
+          %h1 簡単に売り買いできる
+          %h2 スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      %li.list
+        .list__pict
+          = image_tag "/assets/material/icon/icon-03.png", class: "img"
+        .list__text
+          %h1 売上金は即日振込みに対応
+          %h2 午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+      %li.list
+        .list__pict
+          = image_tag "/assets/material/icon/icon-04.png", class: "img"
+        .list__text
+          %h1 様々な支払いに対応
+          %h2 お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+
+  -# ⑤ピックアップカテゴリ
+  .pickup-category
+    %h2 ピックアップカテゴリ
+    .category-box
+      .box__title
+      = link_to "新規投稿商品","#", class: "box__title"
+      .box__lists
+        .box__lists--list
+          = link_to "#", class: "box__lists--list" do
+            .image
+              = image_tag "/assets/material/logo/saba.png"
+            .text
+              %h3 product3
+              .price
+                %ul
+                  %li 30000円
+                  %li 
+                    %i.fa.fa-star 0
+                %p (税込)
+        .box__lists--list
+          = link_to "#", class: "box__lists--list" do
+            .image
+              = image_tag "/assets/material/logo/sasami.png"
+            .text
+              %h3 product3
+              .price
+                %ul
+                  %li 30000円
+                  %li 
+                    %i.fa.fa-star 0
+                %p (税込)
+        .box__lists--list
+          = link_to "#", class: "box__lists--list" do
+            .image
+              =image_tag "/assets/material/logo/kare.png"
+            .text
+              %h3 product3
+              .price
+                %ul
+                  %li 30000円
+                  %li 
+                    %i.fa.fa-star 0
+                %p (税込)
+
+  -# ⑥ピックアップブランド
+  .pickup-category
+    %h2 ピックアップブランド
+    .category-box
+      .box__title
+      = link_to "アーカイバ","#", class: "box__title"
+      .box__lists
+        .box__lists--list
+          = link_to "#", class: "box__lists--list" do
+            .image
+              = image_tag "/assets/material/logo/saba.png"
+            .text
+              %h3 product3
+              .price
+                %ul
+                  %li 30000円
+                  %li 
+                    %i.fa.fa-star 0
+                %p (税込)
+        .box__lists--list
+          = link_to "#", class: "box__lists--list" do
+            .image
+              = image_tag "/assets/material/logo/sasami.png"
+            .text
+              %h3 product3
+              .price
+                %ul
+                  %li 30000円
+                  %li 
+                    %i.fa.fa-star 0
+                %p (税込)
+        .box__lists--list
+          = link_to "#", class: "box__lists--list" do
+            .image
+              = image_tag "/assets/material/logo/kare.png"
+            .text
+              %h3 product3
+              .price
+                %ul
+                  %li 30000円
+                  %li 
+                    %i.fa.fa-star 0
+                %p (税込)

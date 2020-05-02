@@ -1,7 +1,9 @@
+
 @import "reset";
 @import "modules/header";
 @import "modules/app-banner";
 @import "modules/footer";
+@import "modules/main";
 @import "modules/user_registration";
 @import "modules/new_user";
 @import "modules/new_phone";
@@ -15,6 +17,7 @@
 @import "modules/mypage-card";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "modules/items.new";
 
 * {
   box-sizing: border-box;
