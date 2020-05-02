@@ -15,3 +15,55 @@
   .actions
     = f.submit "Log in"
 = render "devise/shared/links"
+:css
+  header {
+    display: none;
+  }
+
+  .app-banner {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
+
+.login
+
+  .header
+    .header__logo
+      = link_to (image_tag src="/assets/material/logo/logo.png"), root_path
+
+  .main
+    .main__content
+
+      .main__content__top
+        %p アカウントをお持ちでない方はこちら
+        = link_to "新規会員登録", new_user_registration_path
+
+      .main__content__bottom
+        .main__content__bottom__group
+          .main__content__bottom__group__facebook
+            = link_to "Facebookで登録する", "#"
+            = icon("fab", "facebook-square")   
+
+        .main__content__registration__google
+          .main__content__bottom__group__google
+            = link_to "Googleで登録する", "#"
+            = icon("fab", "google")
+
+      .main__content__bottom__group
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+
+          = f.email_field :email, autofocus: true, placeholder: 'メールアドレス', class: "input"
+              
+          = f.password_field :password, autocomplete: "off", placeholder: 'パスワード', class: "input"
+
+          = f.submit "Log in", class: 'btn'
+
+      .main__content__bottom__group
+        .main__content__bottom__group__bottom
+          = link_to "パスワードをお忘れの方", "#"
+
+  .registration-footer       
+    = render "devise/registrations/registration-footer"

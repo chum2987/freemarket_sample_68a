@@ -44,6 +44,7 @@ group :development, :test do
   gem 'capistrano-rbenv'
   gem 'capistrano3-unicorn'
   gem 'rubocop', require: false
+  gem 'pry-rails'
 end
 
 group :production do
