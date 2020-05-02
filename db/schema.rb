@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20200429093230) do
     t.string   "name",                          null: false
     t.integer  "price",                         null: false
     t.text     "description",     limit: 65535, null: false
-    t.integer  "category_id_id",                null: false
+    t.integer  "category_id",                   null: false
     t.string   "size"
     t.string   "brand"
     t.string   "condition",                     null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20200429093230) do
     t.integer  "seller_id"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
-    t.index ["category_id_id"], name: "index_items_on_category_id_id", using: :btree
+    t.index ["category_id"], name: "index_items_on_category_id", using: :btree
   end
 
   create_table "phones", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -39,6 +39,14 @@ ActiveRecord::Schema.define(version: 20200429093230) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "nickname",                            null: false
+    t.string   "family_name",                         null: false
+    t.string   "first_name",                          null: false
+    t.string   "family_name_kana",                    null: false
+    t.string   "first_name_kana",                     null: false
+    t.integer  "birth_year",                          null: false
+    t.integer  "birth_month",                         null: false
+    t.integer  "birth_day",                           null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
