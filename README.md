@@ -34,7 +34,7 @@
 |Column|Type|Option|
 |------|----|------|
 |postal_code|integer(7)|null: false|
-|prefectures|string|null: false|
+|prefecture_name|string|null: false|
 |city|string|null: false|
 |street|string|null: false|
 |building_name|string|---|
