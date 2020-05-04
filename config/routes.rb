@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get 'phones', to: 'users/registrations#new_phone'
     post 'phones', to: 'users/registrations#create_phone'
   end
-  root to: "items#index"
+  root to: "items#new"
   resources :items
   resources :users, only: [:show, :new] do
     member do

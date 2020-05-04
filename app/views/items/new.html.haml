@@ -15,130 +15,144 @@
   .header-logo
     %h1
       = link_to root_path do
-        = image_tag src= "/assets/material/logo/logo.png", class: "title-logo"
+        = image_tag "/assets/material/logo/logo.png", class: "title-logo"
   %main.sell-main__container
-    .sell-main__content
-      %h3.sell-main__image-title
-        出品画像
-      %span.sell-main__require
-        必須
-      %p.sell-main__image-guide
-        最大10枚までアップロードできます
-      .sell-main__image-box
-        .image-box__container
-          = link_to "#", class: "sell-main__image-box__ones" do
-            = image_tag "https://store.world.co.jp/img/item/BR070/BR07099A0164/BR07099A0164_l2_c103.jpg", size: "100x130"
-          = link_to "#", class: "sell-main__image-box__ones" do
-            = image_tag "https://images-na.ssl-images-amazon.com/images/I/71FAQhEKlVL._UY395_.jpg", size: "100x130"
-    .sell-main__content
-      .form-group
-        %label
-          商品名
-          %span.sell-main__require
-            必須
-        %input{placeholder: "40文字まで", type: "text", class: "form-group__input-default"}
-      .form-group
-        %label
-          商品の説明
-          %span.sell-main__require
-            必須
-          %textarea{class: "form-group__new-form-area", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありませ\nん。あわせやすいのでおすすめです。", rows: "5"}
-    .sell-main__content.clearfix
-      %h3.sell-main__sub-head
-        商品の詳細
-      .sell-form-box
+    = form_for @item do |f|
+      .sell-main__content
+        %h3.sell-main__image-title
+          出品画像
+        %span.sell-main__require
+          必須
+        %p.sell-main__image-guide
+          最大10枚までアップロードできます
+        .sell-main__image-box
+          .image-box__container
+            = link_to "#", class: "sell-main__image-box__ones" do
+              = image_tag "https://store.world.co.jp/img/item/BR070/BR07099A0164/BR07099A0164_l2_c103.jpg", size: "100x130"
+            = link_to "#", class: "sell-main__image-box__ones" do
+              = image_tag "https://images-na.ssl-images-amazon.com/images/I/71FAQhEKlVL._UY395_.jpg", size: "100x130"
+      .sell-main__content
         .form-group
           %label
-            カテゴリー
+            商品名
             %span.sell-main__require
               必須
-          %input{placeholder: "選択してください", type: "text", class:"form-group__select-form"}
+          %div
+            = f.text_field :name, id: "input-default", placeholder: "40文字まで"
         .form-group
           %label
-            ブランド
-            %span.select
-              任意
-          %input{placeholder: "例) シャネル", type: "text", class:"form-group__brand-select"}    
-        .form-group
-          %label
-            商品の状態
+            商品の説明
             %span.sell-main__require
               必須
-          %input{placeholder: "選択してください", type: "text", class:"form-group__select-form"}
-    .sell-main__content.clearfix
-      %h3.sell-main__sub-head
-        配送について
-      =link_to "?", '#', class:"round-icon"
-      .sell-form-box
-        .form-group
-          %label
-            配送料の負担
-            %span.sell-main__require
-              必須
-          %input{placeholder: "選択してください", type: "text", class:"form-group__select-form"}    
-        .form-group
-          %label
-            発送元の地域
-            %span.sell-main__require
-              必須
-          %input{placeholder: "選択してください", type: "text", class:"form-group__select-form"}    
-        .form-group
-          %label
-            発送までの日数
-            %span.sell-main__require
-              必須
-          %input{placeholder: "選択してください", type: "text", class:"form-group__select-form"}
-    .sell-main__content--bottom-clear.clearfix
-      %h3.sell-main__sub-head
-        価格（¥300〜9,999,999)
-      = link_to "?", '#', class:"round-icon"
-      .sell-form-box
-        %ul
-          %li.price-group
-            .clear-fix
-              .sell-price-title
-                %label
-                  販売価格
-                  %span.sell-main__require
-                    必須
-              .sell-price-input
-                %p
-                  ￥
-                %input{placeholder: "0", type: "text", class:"sell-price-input__price-select"}
-          %li.price-group.border
-            .clearfix
-              .sell-price-fee
-                販売手数料  (10%)
-              .sell-price-input
-                .right
-          %li.price-group.border
-            .clearfix
-              .sell-price-profit
-                販売履歴
-              .sell-price-input
-                .right
-    .sell-main-content
-      .sell-main__exhibit
-      =link_to "#", class: "sell-main__btn sell-main__btn--exhibition" do
-        出品する
-      =link_to "#", class: "sell-main__btn sell-main__btn--draft" do
-        下書きに保存
-      =link_to "#", class: "sell-main__btn sell-main__btn--return" do
-        もどる
-      %div.terms
-        %p
-          禁止されている
-          = link_to '行為', '#', target: 'blank', class: 'terms--links'
-          および
-          = link_to '出品物', '#', target: 'blank', class: 'terms--links'
-          を必ずご確認ください。
-          = link_to '偽ブランド品', '#', target: 'blank', class: 'terms--links'
-          や
-          = link_to '盗品物', '#', target: 'blank', class: 'terms--links'
-          などの販売は犯罪であり、法律に
-          %br
-          より処罰される可能性があります。また、出品をもちまして
-          = link_to '加盟店契約', '#', target: 'blank', class: 'terms--links'
-          に同意したことになります。
-  .registration-footer
-    =render 'devise/registrations/registration-footer'
+            = f.text_area :description, class: "form-group__new-form-area", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありませ\nん。あわせやすいのでおすすめです。", rows: "5"
+      .sell-main__content.clearfix
+        %h3.sell-main__sub-head
+          商品の詳細
+        .sell-form-box
+          .form-group
+            %label
+              カテゴリー
+              %span.sell-main__require
+                必須
+            %div
+              .select-form
+                %i.fa.fa-angle-down
+                = f.select :category_id, [["レディース", 0],["メンズ", 1],["ベビー・キッズ", 2],["インテリア・住まい・小物", 3],["本・音楽・ゲーム", 4],["おもちゃ・ホビー・グッズ", 5],["コスメ・香水・美容", 6],["家電・スマホ・カメラ", 7],["スポーツ・レジャー", 8],["ハンドメイド", 9],["チケット", 10],["自転車・オートバイ", 11],["その他", 12]], {prompt: "選択して下さい"}
+          .form-group
+            %label
+              ブランド
+              %span.select
+                任意
+            %input{placeholder: "例) シャネル", type: "text", class:"form-group__brand-select"}    
+          .form-group
+            %label
+              商品の状態
+              %span.sell-main__require
+                必須
+            %div
+              .select-form
+                %i.fa.fa-angle-down
+                = f.select :condition, [["新品、未使用", 0],["未使用に近い", 1],["目立った傷や汚れなし", 2],["やや傷や汚れあり", 3],["傷や汚れあり", 4],["全体的に状態が悪い", 5]], {prompt: "選択して下さい"}
+      .sell-main__content.clearfix
+        %h3.sell-main__sub-head
+          配送について
+        =link_to "?", '#', class:"round-icon"
+        .sell-form-box
+          .form-group
+            %label
+              配送料の負担
+              %span.sell-main__require
+                必須
+            %div
+              .select-form
+                %i.fa.fa-angle-down    
+                = f.select :shipping_fee, [["送料込み(出品者負担)", 0],["着払い(購入者負担)",1]], {prompt: "選択して下さい"}
+          .form-group
+            %label
+              発送元の地域
+              %span.sell-main__require
+                必須
+            %div
+              .select-form
+                %i.fa.fa-angle-down    
+                = f.select :shipping_method, [["埼玉県", 0],["未定", 1]], {prompt: "選択して下さい"}
+          .form-group
+            %label
+              発送までの日数
+              %span.sell-main__require
+                必須
+            %input{placeholder: "選択してください", type: "text", class:"form-group__select-form"}
+      .sell-main__content--bottom-clear.clearfix
+        %h3.sell-main__sub-head
+          価格（¥300〜9,999,999)
+        = link_to "?", '#', class:"round-icon"
+        .sell-form-box
+          %ul
+            %li.price-group
+              .clear-fix
+                .sell-price-title
+                  %label
+                    販売価格
+                    %span.sell-main__require
+                      必須
+                .sell-price-input
+                  %p
+                    ￥
+                  %input{placeholder: "0", type: "text", class:"sell-price-input__price-select"}
+            %li.price-group.border
+              .clearfix
+                .sell-price-fee
+                  販売手数料  (10%)
+                .sell-price-input
+                  .right
+            %li.price-group.border
+              .clearfix
+                .sell-price-profit
+                  販売履歴
+                .sell-price-input
+                  .right
+      .sell-main-content
+        .sell-main__exhibit
+        =link_to "#", class: "sell-main__btn sell-main__btn--exhibition" do
+          出品する
+        =link_to "#", class: "sell-main__btn sell-main__btn--draft" do
+          下書きに保存
+        =link_to "#", class: "sell-main__btn sell-main__btn--return" do
+          もどる
+        %div.terms
+          %p
+            禁止されている
+            = link_to '行為', '#', target: 'blank', class: 'terms--links'
+            および
+            = link_to '出品物', '#', target: 'blank', class: 'terms--links'
+            を必ずご確認ください。
+            = link_to '偽ブランド品', '#', target: 'blank', class: 'terms--links'
+            や
+            = link_to '盗品物', '#', target: 'blank', class: 'terms--links'
+            などの販売は犯罪であり、法律に
+            %br
+            より処罰される可能性があります。また、出品をもちまして
+            = link_to '加盟店契約', '#', target: 'blank', class: 'terms--links'
+            に同意したことになります。
+    .registration-footer
+      =render 'devise/registrations/registration-footer'
