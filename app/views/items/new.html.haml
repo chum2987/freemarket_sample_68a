@@ -86,7 +86,7 @@
             %div
               .select-form
                 %i.fa.fa-angle-down    
-                = f.select :shipping_fee, [["送料込み(出品者負担)", 0],["着払い(購入者負担)",1]], {prompt: "選択して下さい"}
+                = f.select :shipping_fee, Item.shipping_fees.keys,{prompt: "選択して下さい"}
           .form-group
             %label
               発送元の地域
@@ -95,13 +95,16 @@
             %div
               .select-form
                 %i.fa.fa-angle-down    
-                = f.select :shipping_method, [["埼玉県", 0],["未定", 1]], {prompt: "選択して下さい"}
+                = f.select :shipping_method, Item.shipping_methods.keys,{prompt: "選択して下さい"}
           .form-group
             %label
               発送までの日数
               %span.sell-main__require
                 必須
-            %input{placeholder: "選択してください", type: "text", class:"form-group__select-form"}
+            %div
+              .select-form
+                %i.fa.fa-angle-down    
+                = f.select :shipping_date, Item.shipping_dates.keys,{prompt: "選択して下さい"}
       .sell-main__content--bottom-clear.clearfix
         %h3.sell-main__sub-head
           価格（¥300〜9,999,999)
