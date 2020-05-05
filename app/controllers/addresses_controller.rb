@@ -4,8 +4,12 @@ class AddressesController < ApplicationController
   end
 
   def create
-    Address.create(address_params)
-    redirect_to user_path(current_user)
+    @address = Address.create(address_params)
+    if @address.save
+      redirect_to user_path(current_user)
+    else
+      render :new
+    end
   end
 
   private
