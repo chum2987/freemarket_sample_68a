@@ -66,3 +66,4 @@ gem 'erb2haml'
 gem 'font-awesome-sass'
 gem 'haml-rails'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'ancestry'
