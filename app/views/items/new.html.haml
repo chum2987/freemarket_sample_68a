@@ -72,7 +72,7 @@
             %div
               .select-form
                 %i.fa.fa-angle-down
-                = f.select :condition, [["新品、未使用", 0],["未使用に近い", 1],["目立った傷や汚れなし", 2],["やや傷や汚れあり", 3],["傷や汚れあり", 4],["全体的に状態が悪い", 5]], {prompt: "選択して下さい"}
+                = f.select :condition, Item.conditions.keys,{prompt: "選択して下さい"}
       .sell-main__content.clearfix
         %h3.sell-main__sub-head
           配送について
