@@ -4,7 +4,7 @@ class AddressesController < ApplicationController
   end
 
   def create
-    @address = Address.create(address_params)
+    @address = Address.new(address_params)
     if @address.save
       redirect_to user_path(current_user)
     else
