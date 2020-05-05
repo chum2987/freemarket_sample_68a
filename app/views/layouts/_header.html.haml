@@ -18,9 +18,8 @@
     .header__main__bottom__right
       - if user_signed_in?
         .header__main__bottom__right__login
-          = link_to "マイページ", "#", class: "header-btn"
+          = link_to "マイページ", user_path(current_user.id), class: "header-btn"
         .header__main__bottom__right__logout
-          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'header-btn'
       - else
         .header__main__bottom__right__login
           = link_to "ログイン", new_user_session_path, class: "header-btn"
