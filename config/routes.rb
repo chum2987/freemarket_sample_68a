@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   end
   resources :phones, only: [:new, :create]
   resources :addresses, only: [:new, :create]
+  resources :categories, only: [:show]
 end
