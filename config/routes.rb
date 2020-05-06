@@ -15,4 +15,6 @@ Rails.application.routes.draw do
     end
   end
   resources :phones, only: [:new, :create]
+  resources :item_images
 end
+
