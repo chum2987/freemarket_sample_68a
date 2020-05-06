@@ -121,17 +121,21 @@
                 .sell-price-input
                   %p
                     ￥
-                  %input{placeholder: "0", type: "text", class:"sell-price-input__price-select"}
-            %li.price-group.border
+                  %div
+                    = f.number_field :price, min:1, max:9999999, class: "sell-price-input__price-select", placeholder: "0"
+                .sell-price-note
+                  %p
+                    300以上9999999以下で入力して下さい
+            %li.price-group-border
               .clearfix
                 .sell-price-fee
                   販売手数料  (10%)
                 .sell-price-input
                   .right
-            %li.price-group.border
+            %li.price-group-border
               .clearfix
                 .sell-price-profit
-                  販売履歴
+                  販売利益
                 .sell-price-input
                   .right
       .sell-main-content
