@@ -1,7 +1,7 @@
 .header__main
   .header__main__top
     .header__main__top__title
-      = image_tag src= "/assets/material/logo/logo.png", class: "title-logo"
+      = link_to (image_tag src= "/assets/material/logo/logo.png"), root_path, class: "title-logo"
     .header__main__top__search
       .header__main__top__search__box
         %input{placeholder: "キーワードから探す", type: "text", class: "search-box"}
@@ -18,9 +18,8 @@
     .header__main__bottom__right
       - if user_signed_in?
         .header__main__bottom__right__login
-          = link_to "マイページ", "#", class: "header-btn"
+          = link_to "マイページ", user_path(current_user.id), class: "header-btn"
         .header__main__bottom__right__logout
-          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'header-btn'
       - else
         .header__main__bottom__right__login
           = link_to "ログイン", new_user_session_path, class: "header-btn"

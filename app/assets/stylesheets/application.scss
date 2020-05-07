@@ -15,10 +15,12 @@
 @import "modules/mypage-content";
 @import "modules/mypage-signout";
 @import "modules/mypage-card";
+@import "modules/mypage-address";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "modules/items.new";
 
 * {
   box-sizing: border-box;
+  font-family: "YuGothic";
 }

@@ -4,32 +4,41 @@
 
 |Column|Type|Option|
 |------|----|------|
-|name|string|null: false|
+|nickname|string|null: false|
 |email|string|null: false|
 |password|string|null: false, unipue: true|
 |family_name|string|null: false|
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|birth_year|date|null: false|
-|birth_month|date|null: false|
-|birth_day|date|null: false|
-|phone_number|string|null:false, unique: true|
+|birth_year|integer|null: false|
+|birth_month|integer|null: false|
+|birth_day|integer|null: false|
 
 ### Association
 - has_many :items
-- has_one :profile
+- has_one :address
 - has_one :credit_card
+- has_one :phone
+
+### Phoneテーブル
+|Column|Type|Option|
+|------|----|------|
+|phone_number|text|null:false, unique: true|
+|user_id|references|null: false, foreign_key: true|
+
+### Assciation
+- belongs_to :user
 
 ## addressテーブル
 |Column|Type|Option|
 |------|----|------|
 |postal_code|integer(7)|null: false|
-|prefectures|string|null: false|
+|prefecture_name|string|null: false|
 |city|string|null: false|
 |street|string|null: false|
 |building_name|string|---|
-|user_id|ireferences|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -76,13 +85,9 @@
 ## credit_cardsテーブル
 |Column|Type|Option|
 |------|----|------|
-|card_number|integer|null: false, unique: true|
-|expiration_month|integer|null: false|
-|expiration_year|integer|null:false|
-|card_first_name|string|null: false|
-|card_family_name|string|null: false|
-|security_code|integer|null: false|
-|user_id|references|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|card_id|string|null: false|
+|customer_id|string|null: false|
 
 ### Association
 - belong_to :user
