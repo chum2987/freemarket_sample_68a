@@ -19,6 +19,35 @@ ActiveRecord::Schema.define(version: 20200505144337) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
+ActiveRecord::Schema.define(version: 20200504140837) do
+
+  create_table "item_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "item_id",    null: false
+    t.string   "image_url",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_item_images_on_item_id", using: :btree
+ActiveRecord::Schema.define(version: 20200504122427) do
+
+  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "postal_code",     null: false
+    t.string   "prefecture_name", null: false
+    t.string   "city",            null: false
+    t.string   "street",          null: false
+    t.string   "building_name"
+    t.integer  "user_id",         null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
+  end
+
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.string   "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
+    t.index ["name"], name: "index_categories_on_name", using: :btree
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -46,7 +75,7 @@ ActiveRecord::Schema.define(version: 20200505144337) do
     t.datetime "updated_at",                 null: false
     t.index ["user_id"], name: "index_phones_on_user_id", using: :btree
   end
-
+,
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -60,4 +89,5 @@ ActiveRecord::Schema.define(version: 20200505144337) do
   end
 
   add_foreign_key "credit_cards", "users"
+  add_foreign_key "item_images", "items", "addresses", "users"
 end
