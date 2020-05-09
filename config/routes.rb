@@ -9,10 +9,11 @@ Rails.application.routes.draw do
   root to: "items#index"
   resources :items
   resources :users, only: [:show, :new] do
-    member do
+      member do
       get "signout"
       get "card"
     end
   end
   resources :phones, only: [:new, :create]
+  resources :credit_cards, only: [:new]
 end

@@ -85,9 +85,9 @@
 ## credit_cardsテーブル
 |Column|Type|Option|
 |------|----|------|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 |card_id|string|null: false|
 |customer_id|string|null: false|
 
 ### Association
-- belong_to :user
+- belongs_to :user
