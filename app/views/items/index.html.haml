@@ -149,10 +149,15 @@
             .image
               = image_tag "/assets/material/logo/saba.png"
             .text
-              %h3 product3
+              %h3 
+                - @items.each do |item|
+                  = item.name
               .price
                 %ul
-                  %li 30000円
+                  %li
+                    - @items.each do |item|
+                      = item.price
+                      円
                   %li 
                     %i.fa.fa-star 0
                 %p (税込)
