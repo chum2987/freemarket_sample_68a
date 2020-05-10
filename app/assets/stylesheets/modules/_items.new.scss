@@ -97,7 +97,7 @@
     font-weight: bold;
     font-size: 14px;
   }
-  &__input-default {
+  #input-default {
     display: block;
     width: 620px;
     height: 50px;
@@ -116,14 +116,6 @@
     font-weight: normal;
     padding: 15px;
     font-size: 16px;
-  }
-  &__select-form {
-    width: 620px;
-    height: 50px;
-    border-radius: 5px;
-    border: solid 1px #AAAAAA;
-    padding-left: 20px;
-    margin-top: 10px;
   }
   &__brand-select {
     width: 620px;
@@ -184,24 +176,62 @@
       display: inline-block;
       width: 250px;
       height:50px;
+      padding-right: 15px;
       position: absolute;
       top: -10px;
       right: 70px;
       border-radius: 5px;
-      border: solid 1px #60EEFF
+      border: solid 1px #005FFF;
+      text-align: right;
     }
   }
+  .sell-price-note {
+    float: right;
+    margin: 30px 15px 0 0;
+    font-size: 13px;
+    color: red;
+  }
 }
-.sell-price-fee {
-  font-size: 15px;
-  padding-left: 30px;
-  padding-bottom: 20px;
+.price-group-border {
+  position: flex;
+  .sell-price-fee {
+  font-size: 13px;
+  padding: 50px 0  20px 30px;
   border-bottom: solid 1px #efefef;
+ }
+ .sell-price-profit {
+  padding: 30px 0 30px 30px;
+  font-size: 13px;
+}
 }
 
-.sell-price-profit {
-  padding: 0 0 30px 30px;
-}
+
+.select-form {
+  margin: 8px 0 0;
+  position: relative;
+  i{
+    position: absolute;
+    right: 70px;
+    top:15%;
+    color: #888;
+    z-index: 10;
+    font-size: 35px;
+    
+  }
+  select{
+    width: 620px;
+    height: 50px;
+    padding-left: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+}  
 .terms{
   font-size: 11px;
   padding: 0 55px 60px;
