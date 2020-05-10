@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :purchase]
 
   def index
     @item = Item.all
@@ -7,7 +7,6 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.images.new
   end
 
   def create
@@ -39,6 +38,9 @@ class ItemsController < ApplicationController
     else
       render :show
     end
+  end
+
+  def purchase
   end
 
   private
