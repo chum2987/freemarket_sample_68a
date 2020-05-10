@@ -19,3 +19,9 @@
 public/uploads/*
 .DS_Store
 config/secrets.yml
+
+
+# 投稿される画像は、アプリケーションのpublic以下に溜まる。
+# 画像はGitHubで管理する必要が無いものなので、
+# .gitignoreに以下の記述を追加してGitで管理しないようにする。
+public/uploads/*
