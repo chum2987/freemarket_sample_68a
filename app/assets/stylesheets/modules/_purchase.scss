@@ -8,7 +8,7 @@
   .buy-main {
     width: 100%;
     display: block;
-    
+
     &__item {
       background-color: white;
       height: 100%;
@@ -64,7 +64,6 @@
           .buy-price {
             display: table;
             width: 100%;
-            display: flex;
             justify-content: center;
             &__label {
               float: left;
