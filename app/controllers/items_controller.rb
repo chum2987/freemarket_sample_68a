@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @categorys = Category.where('id < 14')
     @item = Item.new
     @item.images.new
   end
