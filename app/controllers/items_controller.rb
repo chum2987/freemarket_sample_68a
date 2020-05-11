@@ -8,7 +8,6 @@ class ItemsController < ApplicationController
   def new
     @categorys = Category.where('id < 14')
     @item = Item.new
-    @item.images.new
   end
 
   def create
