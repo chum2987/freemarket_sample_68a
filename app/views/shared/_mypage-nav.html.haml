@@ -63,18 +63,18 @@
     = link_to new_address_path do
       %p 発送元・お届け先住所変更
       %i.fas.fa-chevron-right
-    = link_to "#" do
+    = link_to new_credit_card_path do
       %p 支払い方法
       %i.fas.fa-chevron-right
     = link_to '#' do
       %p メール/パスワード
       %i.fas.fa-chevron-right
-    = link_to '#' do
+    = link_to "#" do
       %p 本人情報
       %i.fas.fa-chevron-right
     = link_to '#' do
       %p 電話番号
       %i.fas.fa-chevron-right
-    = link_to signout_user_path(current_user) do
+    = link_to destroy_user_session_path, method: :delete do
       %p ログアウト
       %i.fas.fa-chevron-right
