@@ -140,8 +140,8 @@
                   .right
       .sell-main-content
         .sell-main__exhibit
-        =link_to "#", class: "sell-main__btn sell-main__btn--exhibition" do
-          出品する
+        / form_forを使ったボタン作成のためのf= f.submit
+        = f.submit "出品する", class: "sell-main__btn sell-main__btn--exhibition"
         =link_to "#", class: "sell-main__btn sell-main__btn--draft" do
           下書きに保存
         =link_to "#", class: "sell-main__btn sell-main__btn--return" do
