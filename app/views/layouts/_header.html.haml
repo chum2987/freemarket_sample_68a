@@ -1,7 +1,8 @@
 .header__main
   .header__main__top
     .header__main__top__title
-      = link_to (image_tag src= "/assets/material/logo/logo.png"), root_path, class: "title-logo"
+      = link_to root_path do
+        = image_tag asset_path ("/assets/material/logo/logo.png"), class: "title-logo"
     .header__main__top__search
       .header__main__top__search__box
         %input{placeholder: "キーワードから探す", type: "text", class: "search-box"}
