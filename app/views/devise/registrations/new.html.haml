@@ -15,7 +15,8 @@
 
   .header
     .header__left
-      = link_to (image_tag src="/assets/material/logo/logo.png"), root_path
+      = link_to root_path do
+        = image_tag ("material/logo/logo.png"), root_path
     .header__right
       .header__right__top
         %ol
