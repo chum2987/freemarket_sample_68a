@@ -7,7 +7,11 @@ Rails.application.routes.draw do
     post 'phones', to: 'users/registrations#create_phone'
   end
   root to: "items#index"
-  resources :items
+  resources :items do
+    member do
+      get "purchase"
+    end
+  end
   resources :users, only: [:show, :new] do
     member do
       get "signout"
@@ -15,6 +19,8 @@ Rails.application.routes.draw do
     end
   end
   resources :phones, only: [:new, :create]
+  resources :item_images
   resources :addresses, only: [:new, :create]
   resources :categories, only: [:show]
 end
+
