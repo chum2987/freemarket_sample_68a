@@ -4,19 +4,27 @@
     .mypage-cards
       .mypage-cards__head
         支払い方法
+
       .mypage-cards__inner
-        .mypage-cards__inner__head
-          登録クレジットカード情報
-          - if @card.present?
-            カード１
-            %button "削除する"
-          - else
-            .mypage-cards__inner__add-card
-              .mypage-cards__inner__add-card__content
-                = link_to "#" do
-                  %i.fas.fa-credit-card
-                  %p クレジットカードを追加する
-            .mypage-cards__inner__method-pay
-              = link_to "#" do
-                %p 支払い方法について
-                %i.fas.fa-chevron-right
+        .mypage-cards__inner__list
+          %label 登録クレジットカード情報
+          .mypage-cards__inner__list__number
+            **** **** **** 0000
+          .mypage-cards__inner__list_expiration-date
+            01 月
+            01 年
+          .mypage-cards__inner__list__delete
+            = link_to "#" do
+              %i.fas.fa-credit-card
+              %p クレジットカードを削除する
+
+          .mypage-cards__inner__add-card
+            .mypage-cards__inner__add-card__content
+              = link_to new_credit_card_path do
+                %i.fas.fa-credit-card
+                %p クレジットカードを追加する
+
+          .mypage-cards__inner__method-pay
+            = link_to "#" do
+              %p.method-pay 支払い方法について
+              %i.fas.fa-chevron-right

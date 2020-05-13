@@ -6,6 +6,6 @@ class CreditCardsController < ApplicationController
     @card = CreditCard.new
   end
 
-  def create
+  def destroy
   end
 end

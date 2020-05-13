@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     end
   end
   resources :phones, only: [:new, :create]
-  resources :credit_cards, only: [:new, :create]
+  resources :credit_cards, only: [:new, :create, :destroy]
   resources :item_images
   resources :addresses, only: [:new, :create]
 end
