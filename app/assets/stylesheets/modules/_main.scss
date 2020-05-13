@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     background-color: skyblue;
-      img {
+      .img {
         height: 100%;
         width: 100%;
         object-fit: cover;
@@ -45,7 +45,7 @@
         }
         .google {
           a {
-            img {
+            .img {
               width: 160px;
               height:50px;
               margin:10px;
@@ -109,7 +109,7 @@
                 background-color: #3CCACE;
                 color: #fff;
               }
-                img {
+                .img {
                   width: 100%;
                 }
           }
@@ -150,7 +150,7 @@
     align-items: center;
     background-color: teal;
     position: relative;
-      img {
+      .img {
         height: 100%;
         width: 100%;
         object-fit: cover;
@@ -178,7 +178,7 @@
         &--btn {
           display: flex;
           a {
-            img {
+            .img2 {
               width: 160px;
               height:50px;
               margin:10px;
@@ -229,7 +229,7 @@
             position: relative;
             margin-bottom: 20px;
             width: 70%;
-            img {
+            .img {
               width: 100%;
             }
           }
