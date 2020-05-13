@@ -6,5 +6,6 @@
   %li 
     = link_to "特定商取引に関する表記", "#"
 .registration-footer__logo
-  = link_to (image_tag src="/assets/material/logo/logo.png"), root_path
+  = link_to root_path do
+    =image_tag asset_path ("material/logo/logo.png")
 %p ©︎ FURIMA, Inc.
