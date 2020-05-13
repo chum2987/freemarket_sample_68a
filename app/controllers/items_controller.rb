@@ -1,14 +1,13 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy, :purchase]
+  before_action :limit_category, only: [:new, :create]
 
   def index
     @item = Item.all
   end
 
   def new
-    @categorys = Category.where('id < 14')
     @item = Item.new
-    @item.images.new
   end
 
   def create
@@ -49,6 +48,10 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
+
+  def limit_category
+    @categorys = Category.where('id < 14')
+  end  
 
   def item_params
     params.require(:item)
