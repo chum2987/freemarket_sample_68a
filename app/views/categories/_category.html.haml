@@ -1,0 +1,12 @@
+.parent
+  - @parents.each do |parent|
+    .parent-content
+      = link_to parent.name, category_path(parent.id)
+      .child
+        - parent.children.each do |child|
+          .child-content
+            = link_to child.name, category_path(child.id)
+            .grandchild
+              - child.children.each do |grandchild|
+                .grandchild-content
+                  =link_to grandchild.name, category_path(grandchild.id)

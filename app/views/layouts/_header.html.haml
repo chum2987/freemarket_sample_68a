@@ -11,8 +11,10 @@
             = image_tag src= "/assets/material/icon/icon-search 1.png", class: "serach-icon"
   .header__main__bottom
     .header__main__bottom__left
-      .header__main__bottom__left__category
-        = link_to "カテゴリー", "#", class: "header-btn"
+      #category-area
+        %p カテゴリー
+        .category-clearfix
+          = render "categories/category"
       .header__main__bottom__left__brand
         = link_to "ブランド", "#", class: "header-btn"
     .header__main__bottom__right

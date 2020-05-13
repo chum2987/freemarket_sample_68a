@@ -3,11 +3,11 @@ class ItemsController < ApplicationController
 
   def index
     @item = Item.all
+    # @category = Category.find(params[:id])
   end
 
   def new
     @item = Item.new
-    @item.images.new
   end
 
   def create

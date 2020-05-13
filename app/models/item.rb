@@ -12,5 +12,5 @@ class Item < ApplicationRecord
     validates :shipping_fee
     validates :shipping_method
     validates :shipping_date
-  end
+  end 
 end
