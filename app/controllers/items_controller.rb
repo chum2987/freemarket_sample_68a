@@ -3,7 +3,6 @@ class ItemsController < ApplicationController
 
   def index
     @item = Item.all
-    # @category = Category.find(params[:id])
   end
 
   def new
