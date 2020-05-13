@@ -30,8 +30,10 @@
       %li
         %a お知らせ
 .footer__logo
-  = link_to (image_tag src ="/assets/material/logo/logo-white.png")
+  = link_to  root_path do 
+    = image_tag asset_path ("material/logo/logo-white.png")
 %p.footer__text @FURIMA       
 .exhibition-btn
-  = link_to "出品する", new_item_path
-  = image_tag "/assets/material/icon/icon_camera.png", width: "60"     
+  = link_to new_item_path do
+    %p 出品する
+    = image_tag asset_path ("material/icon/icon_camera.png"), width: "60"     

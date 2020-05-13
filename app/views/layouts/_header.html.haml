@@ -1,18 +1,21 @@
 .header__main
   .header__main__top
     .header__main__top__title
-      = link_to (image_tag src= "/assets/material/logo/logo.png"), root_path, class: "title-logo"
+      = link_to root_path do
+        = image_tag asset_path ("material/logo/logo.png"), class: "title-logo"
     .header__main__top__search
       .header__main__top__search__box
         %input{placeholder: "キーワードから探す", type: "text", class: "search-box"}
       .header__main__top__search__button
         %button{type: "submit", class: "submit-btn"}
           .header__main__top__search__button__icon
-            = image_tag src= "/assets/material/icon/icon-search 1.png", class: "serach-icon"
+            = image_tag asset_path ("material/icon/icon-search 1.png"), class: "serach-icon"
   .header__main__bottom
     .header__main__bottom__left
-      .header__main__bottom__left__category
-        = link_to "カテゴリー", "#", class: "header-btn"
+      #category-area
+        %p カテゴリー
+        .category-clearfix
+          = render "categories/category"
       .header__main__bottom__left__brand
         = link_to "ブランド", "#", class: "header-btn"
     .header__main__bottom__right

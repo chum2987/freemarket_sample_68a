@@ -1,4 +1,3 @@
-
 @import "reset";
 @import "modules/header";
 @import "modules/app-banner";
@@ -20,7 +19,13 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "modules/items.new";
+@import "modules/show_category";
+@import "modules/category";
+@import "modules/items.new";
 @import "modules/purchase";
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 * {
   box-sizing: border-box;
