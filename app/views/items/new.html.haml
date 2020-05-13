@@ -15,7 +15,7 @@
   .header-logo
     %h1
       = link_to root_path do
-        = image_tag "/assets/material/logo/logo.png", class: "title-logo"
+        = image_tag asset_path ("material/logo/logo.png"), class: "title-logo"
   %main.sell-main__container
     = form_for @item do |f|
       .sell-main__content
