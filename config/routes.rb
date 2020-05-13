@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   resources :phones, only: [:new, :create]
   resources :item_images
   resources :addresses, only: [:new, :create]
+  resources :categories, only: [:show]
 end
 

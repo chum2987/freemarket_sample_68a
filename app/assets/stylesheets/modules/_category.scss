@@ -1,0 +1,76 @@
+.parent, .child, .grandchild {
+  display: none;
+}
+
+#category-area {
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  color: #333;
+
+  p:hover {
+    color: rgb(248, 189, 26);
+    }
+
+  .category-clearfix {
+    position: absolute;
+    background-color: white;
+
+    .parent,.child,.grandchild {
+      box-shadow: 1px 1px 4px;
+      background-color: white;
+      height: 600px;
+    }
+
+    .parent-content,.child-content,.grandchild-content {
+      padding: 12px 6px;
+
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+    }
+  }
+
+  &:hover {
+
+    .parent {
+      display: block;
+
+      .parent-content {
+        width: 240px;
+
+        a:hover {
+          color: rgb(248, 189, 26);
+        }
+
+        &:hover {
+
+          .child {
+            width: 240px;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 240px;
+
+            .child-content {
+              display: block;
+
+              &:hover {
+
+                .grandchild {
+                  width: 240px;
+                  display: block;
+                  position: absolute;
+                  top: 0;
+                  left: 240px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
