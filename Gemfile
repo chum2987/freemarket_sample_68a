@@ -65,7 +65,7 @@ gem 'devise'
 gem 'erb2haml'
 gem 'font-awesome-sass'
 gem 'haml-rails'
-gem 'payjp'
 gem 'dotenv-rails'
+gem 'payjp'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'ancestry'
