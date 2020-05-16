@@ -67,3 +67,7 @@ gem 'font-awesome-sass'
 gem 'haml-rails'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'ancestry'
+
+# 画像の送信とリサイズができるgem
+gem 'carrierwave'
+gem 'mini_magick'

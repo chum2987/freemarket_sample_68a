@@ -1,7 +1,16 @@
 class Item < ApplicationRecord
-  belongs_to :user
+  belongs_to :seller, class_name: "User", foreign_key: "seller_id"
   has_many :item_images
   belongs_to :category
+  accepts_nested_attributes_for :item_images, allow_destroy: true
+
+  # fields_forメソッドを利用する際に、親モデルの中に書く必要があるメソッドです。
+  # 以下の例のように、引数として子モデルの名前を書きます。
+  # allow_destroy: trueは
+  # accepts_nested_attributes_forメソッドのオプションとして、
+  # 引数に書くことができる記述です。
+  # このオプションをつけることで、親のレコードが削除された場合に、
+  # 関連付いている子のレコードも一緒に削除してくれます。
 
   with_options presence: true do
     validates :name
