@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get "purchase"
-      get "search"
     end
   end
   resources :users, only: [:show, :new] do
