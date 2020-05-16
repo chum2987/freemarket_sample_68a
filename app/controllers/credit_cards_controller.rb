@@ -4,7 +4,7 @@ class CreditCardsController < ApplicationController
   end
 
   def new
-    card = CreditCard.new
+    @card = CreditCard.new
   end
 
   def destroy
