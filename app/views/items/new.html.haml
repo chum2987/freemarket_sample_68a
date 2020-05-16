@@ -27,10 +27,14 @@
           最大10枚までアップロードできます
         .sell-main__image-box
           .image-box__container
-            = link_to "#", class: "sell-main__image-box__ones" do
-              = image_tag "https://store.world.co.jp/img/item/BR070/BR07099A0164/BR07099A0164_l2_c103.jpg", size: "100x130"
-            = link_to "#", class: "sell-main__image-box__ones" do
-              = image_tag "https://images-na.ssl-images-amazon.com/images/I/71FAQhEKlVL._UY395_.jpg", size: "100x130"
+            = f.fields_for :item_images do |i|
+              = i.file_field :image_url
+              %br/
+            = f.submit
+            -# = link_to "#", class: "sell-main__image-box__ones" do
+            -#   = image_tag "https://store.world.co.jp/img/item/BR070/BR07099A0164/BR07099A0164_l2_c103.jpg", size: "100x130"
+            -# = link_to "#", class: "sell-main__image-box__ones" do
+            -#   = image_tag "https://images-na.ssl-images-amazon.com/images/I/71FAQhEKlVL._UY395_.jpg", size: "100x130"
       .sell-main__content
         .form-group
           %label
@@ -140,12 +144,11 @@
                   .right
       .sell-main-content
         .sell-main__exhibit
-        =link_to "#", class: "sell-main__btn sell-main__btn--exhibition" do
-          出品する
-        =link_to "#", class: "sell-main__btn sell-main__btn--draft" do
-          下書きに保存
-        =link_to "#", class: "sell-main__btn sell-main__btn--return" do
-          もどる
+          = f.submit "出品する", class: "sell-main__btn sell-main__btn--exhibition"
+          =link_to "#", class: "sell-main__btn sell-main__btn--draft" do
+            下書きに保存
+          =link_to "#", class: "sell-main__btn sell-main__btn--return" do
+            もどる
         %div.terms
           %p
             禁止されている
@@ -163,3 +166,5 @@
             に同意したことになります。
   .registration-footer
     =render 'devise/registrations/registration-footer'
+
+
