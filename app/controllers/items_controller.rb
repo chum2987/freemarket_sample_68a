@@ -48,6 +48,15 @@ class ItemsController < ApplicationController
   def purchase
   end
 
+  def category_children
+    @category_children = Category.find(params[:productcategory]).children
+  end
+  
+
+  def category_grand_children
+    @categlry_grandchildren = Category.find(params[:productcategory]).children
+  end  
+
   private
   def set_item
     @item = Item.find(params[:id])
