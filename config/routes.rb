@@ -22,6 +22,6 @@ Rails.application.routes.draw do
   resources :credit_cards, only: [:index, :new, :destroy]
   resources :item_images
   resources :addresses, only: [:new, :create]
-  resources :categories, only: [:show]
+  resources :categories, only: [:index, :show]
 end
 
