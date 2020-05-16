@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
   # newアクションで定義されたitemクラスのインスタンスに関連づけられた
   # item_imagesクラスのインスタンスが作成されます。
   def new
+    @parents = Category.order("id ASC").limit(13)
     @item = Item.new
     @item.item_images.new
   end
