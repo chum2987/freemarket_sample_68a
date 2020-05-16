@@ -61,7 +61,7 @@
             %div
               .select-form
                 %i.fa.fa-angle-down
-                = f.collection_select(:category_id, @parents, :id, :name, {prompt: "選択して下さい"})
+                = f.collection_select(:category_id, @parents, :id, :name, {prompt: "選択して下さい"}, {id: "category_select"})
           .form-group
             %label
               ブランド
