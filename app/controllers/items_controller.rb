@@ -5,8 +5,6 @@ class ItemsController < ApplicationController
   def index
     @item = Item.all
   end
-
-
   # @item.item_images.newという記述により、
   # newアクションで定義されたitemクラスのインスタンスに関連づけられた
   # item_imagesクラスのインスタンスが作成されます。
