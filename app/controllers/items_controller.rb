@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @parents = Category.all.order("id ASC").limit(13)
+    @parents = Category.order("id ASC").limit(13)
     @item = Item.new
   end
 
