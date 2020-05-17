@@ -5,11 +5,11 @@
       .mypage-card__title
         クレジットカード情報入力
       .mypage-card__form
-        = form_tag @card do |f|
+        = form_tag("/credit_cards", method: :post, id: "chage-form") do
           .mypage-card__form__group
             %label カード番号
             %span.form-require 必須
-          = text_field "card-number", "", class: "number", placeholder: "半角数字のみ", maxlength: "16"
+          = text_field "number", "", class: "number", id: "card_number", type: "text", placeholder: "半角数字のみ", maxlength: "16"
           %ul.card-icon
             %li
               = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?238737266",width:"50px",height:"30px"
@@ -29,7 +29,7 @@
             %label 有効期限
             %span.form-require 必須
             .mypage-card__form__group__select
-              %select#exp_month
+              %select#exp_month{name: "exp_month", type: "text"}
                 %option{value: ""} --
                 %option{value: "1"}01
                 %option{value: "2"}02
@@ -44,7 +44,7 @@
                 %option{value: "11"}11
                 %option{value: "12"}12
               %span 月
-              %select#exp_year
+              %select#exp_year{name: "exp_year", type: "text"}
                 %option{value: ""} --
                 %option{value: "2020"}20
                 %option{value: "2021"}21
@@ -61,7 +61,7 @@
           .mypage-card__form__group
             %label セキュリティーコード
             %span.form-require 必須
-          = text_field "cvc", "", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4"
+          = text_field "cvc", "", id: "cvc", type: "text", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4"
           .mypage-card__form__question
             %li.fas.fa-question-circle
             %span
