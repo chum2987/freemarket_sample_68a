@@ -30,7 +30,7 @@
         .card
           = link_to item_path(item.id) do
             .card__image
-              = image_tag item.item_images.first.image_url.url
+              = image_tag item.item_images.first.image_url
               .card__image__text
                 .card__image__text__name
                   = item.name
@@ -47,4 +47,3 @@
                       0
                 .card__image__text__tax
                   (税込)
-    
