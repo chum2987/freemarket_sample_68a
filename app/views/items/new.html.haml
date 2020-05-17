@@ -30,6 +30,7 @@
             = f.fields_for :item_images do |i|
               = i.file_field :image_url
               %br/
+            %p.error=@item.errors.messages[:image_url][0]
             -# = link_to "#", class: "sell-main__image-box__ones" do
             -#   = image_tag "https://store.world.co.jp/img/item/BR070/BR07099A0164/BR07099A0164_l2_c103.jpg", size: "100x130"
             -# = link_to "#", class: "sell-main__image-box__ones" do
@@ -42,12 +43,14 @@
               必須
           %div
             = f.text_field :name, id: "input-default", placeholder: "40文字まで"
+            %p.error=@item.errors.messages[:name][0]
         .form-group
           %label
             商品の説明
             %span.sell-main__require
               必須
             = f.text_area :description, class: "form-group__new-form-area", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありませ\nん。あわせやすいのでおすすめです。", rows: "5"
+            %p.error=@item.errors.messages[:description][0]
       .sell-main__content.clearfix
         %h3.sell-main__sub-head
           商品の詳細
@@ -61,6 +64,7 @@
               .select-form
                 %i.fa.fa-angle-down
                 = f.collection_select(:category_id, @parents, :id, :name, {prompt: "選択して下さい"})
+                %p.error=@item.errors.messages[:category_id][0]
           .form-group
             %label
               ブランド
@@ -76,6 +80,7 @@
               .select-form
                 %i.fa.fa-angle-down
                 = f.select :condition, Item.conditions.keys,{prompt: "選択して下さい"}
+                %p.error=@item.errors.messages[:condition][0]
       .sell-main__content.clearfix
         %h3.sell-main__sub-head
           配送について
@@ -90,6 +95,7 @@
               .select-form
                 %i.fa.fa-angle-down    
                 = f.select :shipping_fee, Item.shipping_fees.keys,{prompt: "選択して下さい"}
+                %p.error=@item.errors.messages[:shipping_fee][0]
           .form-group
             %label
               発送元の地域
@@ -99,6 +105,7 @@
               .select-form
                 %i.fa.fa-angle-down    
                 = f.select :shipping_method, Item.shipping_methods.keys,{prompt: "選択して下さい"}
+                %p.error=@item.errors.messages[:shipping_method][0]
           .form-group
             %label
               発送までの日数
@@ -108,6 +115,7 @@
               .select-form
                 %i.fa.fa-angle-down    
                 = f.select :shipping_date, Item.shipping_dates.keys,{prompt: "選択して下さい"}
+                %p.error=@item.errors.messages[:shipping_date][0]
       .sell-main__content--bottom-clear.clearfix
         %h3.sell-main__sub-head
           価格（¥300〜9,999,999)
