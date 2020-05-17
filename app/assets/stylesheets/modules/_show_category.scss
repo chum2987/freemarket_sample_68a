@@ -45,22 +45,29 @@
 
     &__lists {
       width: 700px;
+      height: 100%;
       padding: 20px 0;
       margin: auto;
+      display: flex;
 
       .card {
         width: 220px;
         background-color: white;
+        margin-right: 20px;
 
         a {
           text-decoration: none;
           color: #000;
+          width: 220px;
         }
 
         &__image {
+          width: 220px;
+          height: 330px;
 
           img {
-            width: 100%;
+            width: 220px;
+            height: 220px;
           }
 
           &__text {
