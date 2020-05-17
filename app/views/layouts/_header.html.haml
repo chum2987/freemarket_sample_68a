@@ -13,7 +13,7 @@
   .header__main__bottom
     .header__main__bottom__left
       #category-area
-        %p カテゴリー
+        = link_to "カテゴリー", categories_path
         .category-clearfix
           = render "categories/category"
       .header__main__bottom__left__brand
