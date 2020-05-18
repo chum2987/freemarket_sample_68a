@@ -1,3 +1,18 @@
+@mixin button {
+  display: block;
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: normal;
+  border: 1px solid;
+  border-radius: 100px;
+  text-decoration: none;
+  background-color: pink;
+  margin-bottom: 10px;
+}
+
 .navbar {
   height: 54px;
   width: 100%;
@@ -150,21 +165,10 @@
       padding-top: 40px;
       text-align: center;
       &--editBtn {
-        display: block;
-        height: 50px;
-        width: 100%;
-        line-height: 50px;
-        color: #fff;
-        font-size: 24px;
-        font-weight: normal;
-        border: 1px solid;
-        border-radius: 100px;
-        text-decoration: none;
-        background-color: pink;
-        margin-bottom: 10px;
+        @include button;
       }
       &--deleteBtn {
-        @extend .item__edit--editBtn;
+        @include button;
         background-color: gray;
         width: 70%;
         margin: 10px auto 0;
@@ -174,7 +178,7 @@
       padding-top: 40px;
       text-align: center;
       &--btn {
-        @extend .item__edit--editBtn;
+        @include button;
         height: 100px;
         line-height: 100px;
         font-weight: bold;
