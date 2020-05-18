@@ -146,8 +146,41 @@
         }
       }
     }
+    &__edit {
+      padding-top: 40px;
+      text-align: center;
+      &--editBtn {
+        display: block;
+        height: 50px;
+        width: 100%;
+        line-height: 50px;
+        color: #fff;
+        font-size: 24px;
+        font-weight: normal;
+        border: 1px solid;
+        border-radius: 100px;
+        text-decoration: none;
+        background-color: pink;
+        margin-bottom: 10px;
+      }
+      &--deleteBtn {
+        @extend .item__edit--editBtn;
+        background-color: gray;
+        width: 70%;
+        margin: 10px auto 0;
+      }
+    }
+    &__purchase {
+      padding-top: 40px;
+      text-align: center;
+      &--btn {
+        @extend .item__edit--editBtn;
+        height: 100px;
+        line-height: 100px;
+        font-weight: bold;
+      }
+    }
   }
-
   .comment {
     padding: 24px;
     margin: 10px auto;

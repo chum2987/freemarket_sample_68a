@@ -92,6 +92,15 @@
       .item__option__report
         = icon("fas", "far-flag")
         = link_to "不適切な商品の通報", "#", class: "item__option__report--link"
+    - if user_signed_in?
+      - if current_user.id == @item.seller_id
+        .item__edit
+          = link_to "商品を編集する", edit_item_path(@item.id), method: :get, class: "item__edit--editBtn"
+          or
+          = link_to "削除", item_path(@item.id), method: :delete, data: {confirm: '本当に削除しますか?'}, class: "item__edit--deleteBtn"
+      - else
+        .item__purchase
+          = link_to "購入画面に進む", purchase_item_path, method: :get, class: "item__purchase--btn"
   .comment
     %textarea.comment__body
     .comment__notes
