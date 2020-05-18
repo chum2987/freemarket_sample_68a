@@ -1,27 +1,43 @@
 // DOM読み込みが完了したら実行
-document.addEventListener('DOMContentLoaded', (e) => {
-  // payjp.jsの初期化
-  Payjp.setPublicKey('YOUR_PUBLIC_KEY');
+document.addEventListener("DOMContentLoaded", (e) => {
+  if (document.getElementById("token_submit") != null) {
+    // pay.jpの公開鍵
+    Payjp.setPublicKey("pk_test_0f3486b39d3ab4453227587b");
 
-  // ボタンのイベントハンドリング
-  const btn = document.getElementById('token');
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
+    // ボタンのイベントハンドリング
+    var btn = document.getElementById("token_submit");
+    //ボタンが押された時に作動
+    btn.addEventListener("click", (e) => {
+      //ボタンを無効化
+      e.preventDefault();
 
-    // カード情報生成
-    const card = {
-      number: document.getElementById('card_number').value,
-      cvc: document.getElementById('cvv').value,
-      exp_month: document.getElementById('exp_month').value,
-      exp_year: document.getElementById('exp_year').value
-    };
+      // カード情報生成
+      var card = {
+        number: document.getElementById("card_number").value,
+        cvc: document.getElementById("cvc").value,
+        exp_month: document.getElementById("exp_month").value,
+        exp_year: document.getElementById("exp_year").value
+      };
 
-    // トークン生成
-    Payjp.createToken(card, (status, response) => {
-      if (status === 200) {
-        // 出力（本来はサーバへ送信）
-        document.getElementById('card_token').innerHTML = response.card.id;
-      }
+      // Payjp.createTokenというメソッドを使ってトークンを生成
+      Payjp.createToken(card, (status, response) => {
+        // 正しいカード情報であれば200
+        if (status === 200) {
+          // 自サーバーにデータをpostしないようにするため.removeAttrで属性を削除
+          $("#card_number").removeAttr("name");
+          $("#cvc").removeAttr("name");
+          $("#exp_month").removeAttr("name")
+          $("#exp_year").removeAttr("name")
+          // .appendでHTML要素を追加
+          $("#card_token").append(
+            $(`<input type="hidden" name="payjp-token">`).val(response.id)
+          );
+          document.inputForm.submit();
+          alert("登録が完了しました");
+        } else {
+          alert("カード情報が正しくありません");
+        }
+      });
     });
-  });
+  }
 }, false);
