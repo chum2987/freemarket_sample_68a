@@ -71,3 +71,6 @@ gem 'ancestry'
 # 画像の送信とリサイズができるgem
 gem 'carrierwave'
 gem 'mini_magick'
+
+# jQueryを利用する為のgem
+gem 'jquery-rails'
