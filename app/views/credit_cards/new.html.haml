@@ -5,7 +5,7 @@
       .mypage-card__title
         クレジットカード情報入力
       .mypage-card__form
-        = form_tag("/credit_cards", method: :post, id: "chage-form") do
+        = form_tag("/credit_cards", method: :post, id: "charge-form", name: "inputForm") do
           .mypage-card__form__group
             %label カード番号
             %span.form-require 必須
@@ -68,3 +68,4 @@
               = link_to "カード裏面の番号とは？", "#", class:"question"
           .mypage-card__form__group
             = submit_tag "登録する", id: "token_submit", class: "submit"
+          #card_token

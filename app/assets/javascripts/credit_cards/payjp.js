@@ -1,6 +1,6 @@
 // DOM読み込みが完了したら実行
 document.addEventListener("DOMContentLoaded", (e) => {
-  if (document.getElementById("token_submit") != null) {
+
     // pay.jpの公開鍵
     Payjp.setPublicKey("pk_test_0f3486b39d3ab4453227587b");
 
@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
           // 自サーバーにデータをpostしないようにするため.removeAttrで属性を削除
           $("#card_number").removeAttr("name");
           $("#cvc").removeAttr("name");
-          $("#exp_month").removeAttr("name")
-          $("#exp_year").removeAttr("name")
+          $("#exp_month").removeAttr("name");
+          $("#exp_year").removeAttr("name");
           // .appendでHTML要素を追加
           $("#card_token").append(
-            $(`<input type="hidden" name="payjp-token">`).val(response.id)
+            $(`<input type="hidden" name="payjpToken">`).val(response.id)
           );
           document.inputForm.submit();
           alert("登録が完了しました");
@@ -39,5 +39,4 @@ document.addEventListener("DOMContentLoaded", (e) => {
         }
       });
     });
-  }
 }, false);
