@@ -1,10 +1,13 @@
 // DOM読み込みが完了したら実行
 document.addEventListener("DOMContentLoaded", (e) => {
 
+  // addEventListenerのnullエラーを解消
+  if (document.getElementById("token_submit") != null) {
+
     // pay.jpの公開鍵
     Payjp.setPublicKey("pk_test_0f3486b39d3ab4453227587b");
 
-    // ボタンのイベントハンドリング
+    // ボタンのイベント
     var btn = document.getElementById("token_submit");
     //ボタンが押された時に作動
     btn.addEventListener("click", (e) => {
@@ -39,4 +42,5 @@ document.addEventListener("DOMContentLoaded", (e) => {
         }
       });
     });
+  };
 }, false);

@@ -14,17 +14,18 @@ class CreditCardsController < ApplicationController
     if params["payjpToken"].blank?
       redirect_to credit_cards_path
     else
-    customer = Payjp::Customer.create(card: params["payjpToken"],
-    metadata: {user_id: current_user.id})
+    customer = Payjp::Customer.create(card: params["payjpToken"])
 
     @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        binding.pry
-        redirect_to root_path
+        redirect_to credit_cards_path
       else
-        redirect_to root_path
+        redirect_to new_credit_card_path
       end
     end
+  end
+
+  def delete
   end
 
   def destroy
