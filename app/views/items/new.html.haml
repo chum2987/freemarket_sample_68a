@@ -60,8 +60,9 @@
                 必須
             %div
               .select-form
-                %i.fa.fa-angle-down
+                %i.fa.fa-chevron-down
                 = f.collection_select(:category_id, @parents, :id, :name, {prompt: "選択して下さい"}, {id: "category_select"})
+              .product_select-children
           .form-group
             %label
               ブランド
@@ -75,7 +76,7 @@
                 必須
             %div
               .select-form
-                %i.fa.fa-angle-down
+                %i.fa.fa-chevron-down
                 = f.select :condition, Item.conditions.keys,{prompt: "選択して下さい"}
       .sell-main__content.clearfix
         %h3.sell-main__sub-head
@@ -89,7 +90,7 @@
                 必須
             %div
               .select-form
-                %i.fa.fa-angle-down    
+                %i.fa.fa-chevron-down
                 = f.select :shipping_fee, Item.shipping_fees.keys,{prompt: "選択して下さい"}
           .form-group
             %label
@@ -98,7 +99,7 @@
                 必須
             %div
               .select-form
-                %i.fa.fa-angle-down    
+                %i.fa.fa-chevron-down
                 = f.select :shipping_method, Item.shipping_methods.keys,{prompt: "選択して下さい"}
           .form-group
             %label
@@ -107,7 +108,7 @@
                 必須
             %div
               .select-form
-                %i.fa.fa-angle-down    
+                %i.fa.fa-chevron-down
                 = f.select :shipping_date, Item.shipping_dates.keys,{prompt: "選択して下さい"}
       .sell-main__content--bottom-clear.clearfix
         %h3.sell-main__sub-head

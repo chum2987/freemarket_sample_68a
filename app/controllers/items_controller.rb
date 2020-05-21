@@ -54,9 +54,9 @@ class ItemsController < ApplicationController
   end
 
 
-  def category_grand_children
-    @categlry_grandchildren = Category.find(params[:productcategory]).children
-    # Ajax通信で送られてきたデータをparamsで受け取り、childrenで孫を取得(実際には子カテゴリーの子となる。childrenは子を取得するメソッド)
+  def category_grandchildren
+    @category_grandchildren = Category.find(params[:productcategory]).children
+    # Ajax通信で送られてきたデータをparamsで受け取り、childrenで孫を取得(実際には子カテゴリーの子となる。childrenは子を取得するメソッド) 
   end  
 
   private
