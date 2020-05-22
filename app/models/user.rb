@@ -19,6 +19,8 @@ class User < ApplicationRecord
   
   validates :email, presence: true, uniqueness: true, format: { with: /\A\S+@\S+\.\S+\z/ }
 
+  validates :password, :password_confirmation, presence: true, length: { minimum: 7 }
+
   validates :family_name, :first_name, presence: true, format: { with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/ }
 
   validates :family_name_kana, :first_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
