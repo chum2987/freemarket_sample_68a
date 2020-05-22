@@ -65,8 +65,6 @@
                 %i.fa.fa-chevron-down
                 = f.collection_select(:category_id, @parents, :id, :name, {prompt: "選択して下さい"}, {id: "category_select"})
               .product_select-children
-                %i.fa.fa-angle-down
-                = f.collection_select(:category_id, @parents, :id, :name, {prompt: "選択して下さい"})
                 %p.error=@item.errors.messages[:category_id][0]
           .form-group
             %label
