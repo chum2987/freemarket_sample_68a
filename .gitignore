@@ -19,6 +19,7 @@
 public/uploads/*
 .DS_Store
 config/secrets.yml
+/.env
 
 
 # 投稿される画像は、アプリケーションのpublic以下に溜まる。
