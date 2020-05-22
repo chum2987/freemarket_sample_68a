@@ -24,6 +24,13 @@
     background-color: #fff;
     width: 700px;
     margin: 0 auto;
+
+    .error {
+      color: red;
+      font-size: 14px;
+      font-weight: normal;
+    }
+
   }
   &__content {
     padding: 40px 0 ;
