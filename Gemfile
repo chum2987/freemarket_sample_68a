@@ -64,12 +64,12 @@ end
 gem 'devise'
 gem 'erb2haml'
 gem 'font-awesome-sass'
+gem 'jquery-rails'
 gem 'haml-rails'
 gem 'dotenv-rails'
 gem 'payjp'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'ancestry'
-gem 'jquery-rails'
 
 # 画像の送信とリサイズができるgem
 gem 'carrierwave'
