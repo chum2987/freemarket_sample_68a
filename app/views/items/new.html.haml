@@ -26,15 +26,12 @@
         %p.sell-main__image-guide
           最大10枚までアップロードできます
         .sell-main__image-box
-          .image-box__container
+          #image-box__container
             = f.fields_for :item_images do |i|
-              = i.file_field :image_url
-              %br/
-            %p.error=@item.errors.messages[:image_url][0]
-            -# = link_to "#", class: "sell-main__image-box__ones" do
-            -#   = image_tag "https://store.world.co.jp/img/item/BR070/BR07099A0164/BR07099A0164_l2_c103.jpg", size: "100x130"
-            -# = link_to "#", class: "sell-main__image-box__ones" do
-            -#   = image_tag "https://images-na.ssl-images-amazon.com/images/I/71FAQhEKlVL._UY395_.jpg", size: "100x130"
+              .js-file_group{"data-index" => "#{i.index}"}
+                = i.file_field :image_url, class: 'js-file'
+                %br/
+                %span.js-remove 削除
       .sell-main__content
         .form-group
           %label
