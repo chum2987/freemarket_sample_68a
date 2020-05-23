@@ -75,7 +75,6 @@ $(function(){
       dataType: 'json'
     })
     .done(function(grandchildren){
-      console.log(grandchildren)
       let insertHTML = '';
       grandchildren.forEach(function(grandchild){
         insertHTML += appendOption(grandchild);
