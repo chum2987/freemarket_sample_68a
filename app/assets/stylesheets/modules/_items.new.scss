@@ -214,15 +214,15 @@
 
 
 .select-form {
-  margin: 8px 0 0;
+  margin: 8px 0 15px 0;
   position: relative;
   i{
     position: absolute;
     right: 70px;
-    top:15%;
+    top:30%;
     color: #888;
     z-index: 10;
-    font-size: 35px;
+    font-size: 20px;
     
   }
   select{
@@ -247,5 +247,3 @@
     color: #66CCFF;
   }
 }
-
-
