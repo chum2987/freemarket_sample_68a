@@ -25,9 +25,6 @@ class CreditCardsController < ApplicationController
     end
   end
 
-  def delete
-  end
-
   def destroy
   end
 end

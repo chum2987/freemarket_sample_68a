@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
       // Payjp.createTokenというメソッドを使ってトークンを生成
       Payjp.createToken(card, (status, response) => {
-        // 正しいカード情報であれば200
+        // 正しいカード情報であればstatusが200
         if (status === 200) {
           // 自サーバーにデータをpostしないようにするため.removeAttrで属性を削除
           $("#card_number").removeAttr("name");
