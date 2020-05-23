@@ -1,0 +1,27 @@
+.category-header
+  %ul
+    %li 
+      FURIMA
+    %li 
+      = icon("fa", "angle-right")
+    %li 
+      = link_to "カテゴリー一覧", categories_path
+
+.category-list
+  .box
+    .categories
+      - @parents.each do |parent|
+        .category-name
+          = link_to parent.name, category_path(parent.id)
+          
+  .all
+    - @parents.each do |parent|
+      .category-box
+        .parent-box
+          = link_to parent.name, category_path(parent.id), class: "parent-name"
+          - parent.children.each do |child|
+            .child-box
+              = link_to child.name, category_path(child.id), class: "child-name"
+              - child.children.each do |grandchild|
+                .grandchild-box
+                  = link_to grandchild.name, category_path(grandchild.id), class: "grandchild-name"

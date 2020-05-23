@@ -22,26 +22,28 @@
 
   .category__main
     .category__main__title
-      %h2 Tシャツの商品一覧
+      %h2 
+        = @category.name 
+        の商品一覧
     .category__main__lists
-      .card
-        = link_to "#" do
-          .card__image
-            = image_tag asset_path("material/logo/kare.png")
-            .card__image__text
-              .card__image__text__name
-                カレー
-              .card__image__text__middle
-                .card__image__text__middle__price
-                  .number
-                    100
-                  .text
-                    円
-                .card__image__text__middle__like
-                  .icon
-                    = icon("fas", "star")
-                  .number
-                    0
-              .card__image__text__tax
-                (税込)
-   
+      - @items.each do |item|
+        .card
+          = link_to item_path(item.id) do
+            .card__image
+              = image_tag item.item_images.first.image_url
+              .card__image__text
+                .card__image__text__name
+                  = item.name
+                .card__image__text__middle
+                  .card__image__text__middle__price
+                    .number
+                      = item.price
+                    .text
+                      円
+                  .card__image__text__middle__like
+                    .icon
+                      = icon("fas", "star")
+                    .number
+                      0
+                .card__image__text__tax
+                  (税込)
