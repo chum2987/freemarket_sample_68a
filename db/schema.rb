@@ -60,12 +60,12 @@ ActiveRecord::Schema.define(version: 20200505144337) do
     t.integer  "price",                         null: false
     t.text     "description",     limit: 65535, null: false
     t.integer  "category_id",                   null: false
-    t.string   "size"
+    t.integer  "size"
     t.string   "brand"
-    t.string   "condition",                     null: false
-    t.string   "shipping_fee",                  null: false
-    t.string   "shipping_method",               null: false
-    t.string   "shipping_date",                 null: false
+    t.integer  "condition",                     null: false
+    t.integer  "shipping_fee",                  null: false
+    t.integer  "shipping_method",               null: false
+    t.integer  "shipping_date",                 null: false
     t.integer  "buyer_id"
     t.integer  "seller_id"
     t.datetime "created_at",                    null: false
