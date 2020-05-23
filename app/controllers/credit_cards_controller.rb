@@ -5,7 +5,6 @@ class CreditCardsController < ApplicationController
   end
 
   def new
-    card = CreditCard.where(users_id: current_user.id)
   end
 
   # Payjpとcredit_cardsのデータベースを作成
