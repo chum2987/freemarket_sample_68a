@@ -60,7 +60,6 @@
       text-align: center;
     }
     &__images {
-      height: 443px;
       width: 620px;
       margin-top: 16px;
       &--main {
@@ -70,14 +69,14 @@
         margin: 0 30px;
       }
       &--others {
-        height: 87px;
         width: 100%;
-        margin-top: 10px;
+        margin: 10px 30px 0;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         .other {
-          height: 87px;
-          width: 140px;
+          height: 65px;
+          width: 102px;
           margin-right: 10px;
           object-fit: cover;
         }
