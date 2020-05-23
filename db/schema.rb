@@ -10,17 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200504140837) do
+ActiveRecord::Schema.define(version: 20200505144337) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "postal_code",     null: false
-    t.string   "prefecture_name", null: false
-    t.string   "city",            null: false
-    t.string   "street",          null: false
+    t.string   "family_name",                    null: false
+    t.string   "first_name",                     null: false
+    t.string   "family_name_kana",               null: false
+    t.string   "first_name_kana",                null: false
+    t.integer  "postal_code",                    null: false
+    t.string   "prefecture_name",                null: false
+    t.string   "city",                           null: false
+    t.string   "street",                         null: false
     t.string   "building_name"
-    t.integer  "user_id",         null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.text     "phone_number",     limit: 65535
+    t.integer  "user_id",                        null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
 
@@ -31,6 +36,15 @@ ActiveRecord::Schema.define(version: 20200504140837) do
     t.datetime "updated_at", null: false
     t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
     t.index ["name"], name: "index_categories_on_name", using: :btree
+  end
+
+  create_table "credit_cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",     null: false
+    t.string   "card_id",     null: false
+    t.string   "customer_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
   end
 
   create_table "item_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -88,5 +102,6 @@ ActiveRecord::Schema.define(version: 20200504140837) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "credit_cards", "users"
   add_foreign_key "item_images", "items"
 end

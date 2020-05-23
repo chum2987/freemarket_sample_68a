@@ -1,0 +1,71 @@
+.main
+  .main__mypage
+    = render "shared/mypage-nav"
+    .mypage-card
+      .mypage-card__title
+        クレジットカード情報入力
+      .mypage-card__form
+        = form_tag("/credit_cards", method: :post, id: "charge-form", name: "inputForm") do
+          .mypage-card__form__group
+            %label カード番号
+            %span.form-require 必須
+          = text_field "number", "", class: "number", id: "card_number", type: "text", placeholder: "半角数字のみ", maxlength: "16"
+          %ul.card-icon
+            %li
+              = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?238737266",width:"50px",height:"30px"
+            %li
+              = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?238737266",width:"50px",height:"30px"
+            %li
+              = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?238737266",width:"50px",height:"30px"
+            %li
+              = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?238737266",width:"50px",height:"30px"
+            %li
+            = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?238737266",width:"50px",height:"30px"
+            %li
+              = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?238737266",width:"50px",height:"30px"
+            %li
+              = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/discover.svg?238737266",width:"50px",height:"30px"
+          .mypage-card__form__group
+            %label 有効期限
+            %span.form-require 必須
+            .mypage-card__form__group__select
+              %select#exp_month{name: "exp_month", type: "text"}
+                %option{value: ""} --
+                %option{value: "1"}01
+                %option{value: "2"}02
+                %option{value: "3"}03
+                %option{value: "4"}04
+                %option{value: "5"}05
+                %option{value: "6"}06
+                %option{value: "7"}07
+                %option{value: "8"}08
+                %option{value: "9"}09
+                %option{value: "10"}10
+                %option{value: "11"}11
+                %option{value: "12"}12
+              %span 月
+              %select#exp_year{name: "exp_year", type: "text"}
+                %option{value: ""} --
+                %option{value: "2020"}20
+                %option{value: "2021"}21
+                %option{value: "2022"}22
+                %option{value: "2023"}23
+                %option{value: "2024"}24
+                %option{value: "2025"}25
+                %option{value: "2026"}26
+                %option{value: "2027"}27
+                %option{value: "2028"}28
+                %option{value: "2029"}29
+                %option{value: "2030"}30
+              %span 年
+          .mypage-card__form__group
+            %label セキュリティーコード
+            %span.form-require 必須
+          = text_field "cvc", "", id: "cvc", type: "text", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4"
+          .mypage-card__form__question
+            %li.fas.fa-question-circle
+            %span
+              = link_to "カード裏面の番号とは？", "#", class:"question"
+          .mypage-card__form__group
+            = submit_tag "登録する", id: "token_submit", class: "submit"
+          #card_token
