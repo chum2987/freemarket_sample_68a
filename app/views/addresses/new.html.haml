@@ -8,6 +8,27 @@
 
       .mypage-address__form
         = form_for @address do |f|
+
+          .mypage-address__form__group
+            = f.label :family_name
+            %span 必須
+            = f.text_field :family_name
+
+          .mypage-address__form__group
+            = f.label :first_name
+            %span 必須
+            = f.text_field :first_name
+
+          .mypage-address__form__group
+            = f.label :family_name_kana
+            %span 必須
+            = f.text_field :family_name_kana
+
+          .mypage-address__form__group
+            = f.label :first_name_kana
+            %span 必須
+            = f.text_field :first_name_kana
+
           .mypage-address__form__group
             = f.label :postal_code, "郵便番号"
             %span 必須
