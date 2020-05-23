@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @parents = Category.where(ancestry:nil)
+    @parents = Category.where(ancestry: nil)
   end
 
   def edit
