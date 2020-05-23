@@ -8,9 +8,14 @@
   z-index: 2;
   color: #333;
 
-  p:hover {
-    color: rgb(248, 189, 26);
+  a {
+    text-decoration: none;
+    color: #555;
+
+    &:hover {
+      color: rgb(248, 189, 26);
     }
+  }
 
   .category-clearfix {
     position: absolute;

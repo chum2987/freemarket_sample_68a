@@ -13,14 +13,14 @@ class Item < ApplicationRecord
   # 関連付いている子のレコードも一緒に削除してくれます。
 
   with_options presence: true do
-    validates :name
-    validates :price
-    validates :description
-    validates :category_id
-    validates :condition
-    validates :shipping_fee
-    validates :shipping_method
-    validates :shipping_date
+    validates :name, presence: {message: "入力してください"}
+    validates :price, presence: {message: "300以上9999999以下で入力してください"}
+    validates :description, presence: {message: "入力してください"}
+    validates :category_id, presence: {message: "選択してください"}
+    validates :condition, presence: {message: "選択してください"}
+    validates :shipping_fee, presence: {message: "選択してください"}
+    validates :shipping_method, presence: {message: "選択してください"}
+    validates :shipping_date, presence: {message: "選択してください"}
   end
 
   enum condition: { "新品、未使用": 1, "未使用に近い": 2, "目立った傷や汚れなし": 3, "やや傷や汚れあり": 4, "傷や汚れあり": 5, "全体的に状態が悪い": 6 }, _prefix: true
