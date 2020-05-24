@@ -34,7 +34,7 @@ $(function(){
     $('.product_select-grandchildren').append(grandchildrenSelectHtml);
   }
 
-  $('#category_select').on('change', function(){  // 親セレクトボックスの選択肢を変えたらイベント発火
+  $(document).on('change', '#category_select', function(){  // 親セレクトボックスの選択肢を変えたらイベント発火
     let productcategory = $('#category_select').val();
   // ↑ productcategoryに選択した親のvalueを代入
     if (productcategory != ''){
@@ -52,7 +52,7 @@ $(function(){
           insertHTML += appendOption(child);
         });
         appendChildrenBox(insertHTML);
-        $("#category_select").on('change', function(){
+        $(document).on('change', '#category_select', function(){
   // 通信成功時に親の選択肢を変えたらイベント発火。子と孫を削除。selectのidにかけるのではなく、親要素にかけないと残ってしまう。
           $('#children_wrapper').remove();
           $('#grandchildren_wrapper').remove();
@@ -80,7 +80,7 @@ $(function(){
         insertHTML += appendOption(grandchild);
       });
       appendgrandChildrenBox(insertHTML);
-      $("#category_select").on('change', function(){
+      $(document).on('change', '#category_select', function(){
   // 通信成功時に親の選択肢を変えたらイベント発火。子と孫を削除。selectのidにかけるのではなく、親要素にかけないと残ってしまう
         $('#grandchildren_wrapper').remove();
         })
