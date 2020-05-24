@@ -2,6 +2,10 @@ class CreditCardsController < ApplicationController
   require "payjp"
 
   def index
+    card = CreditCard.where(user_id: current_user.id).first
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    customer = Payjp::Customer.retrieve(card.customer_id)
+    @default_card = customer.cards.retrieve(card.card_id)
   end
 
   def new
