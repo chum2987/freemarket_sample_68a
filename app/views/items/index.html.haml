@@ -93,50 +93,29 @@
           %h1 様々な支払いに対応
           %h2 お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
 
-  -# ⑤ピックアップカテゴリ
+  -# ⑤ピックアップブランド
   .pickup-category
     %h2 ピックアップカテゴリ
     .category-box
       .box__title
       = link_to "新規投稿商品","#", class: "box__title"
       .box__lists
-        .box__lists--list
-          = link_to "#", class: "box__lists--list" do
-            .image
-              = image_tag "/assets/material/logo/saba.png"
-            .text
-              %h3 product3
-              .price
-                %ul
-                  %li 30000円
-                  %li 
-                    %i.fa.fa-star 0
-                %p (税込)
-        .box__lists--list
-          = link_to "#", class: "box__lists--list" do
-            .image
-              = image_tag "/assets/material/logo/sasami.png"
-            .text
-              %h3 product3
-              .price
-                %ul
-                  %li 30000円
-                  %li 
-                    %i.fa.fa-star 0
-                %p (税込)
-        .box__lists--list
-          = link_to "#", class: "box__lists--list" do
-            .image
-              =image_tag "/assets/material/logo/kare.png"
-            .text
-              %h3 product3
-              .price
-                %ul
-                  %li 30000円
-                  %li 
-                    %i.fa.fa-star 0
-                %p (税込)
-
+        - @items.each do |item|
+          .box__lists--list
+            = link_to item_path(item), class: "box__lists--list" do
+              .image
+                = image_tag item.item_images.first.image_url.to_s if item.item_images.first
+              .text
+                %h3 
+                  = item.name
+                .price
+                  %ul
+                    %li
+                      = item.price
+                      円
+                    %li 
+                      %i.fa.fa-star 0
+                  %p (税込)
   -# ⑥ピックアップブランド
   .pickup-category
     %h2 ピックアップブランド
@@ -144,39 +123,19 @@
       .box__title
       = link_to "アーカイバ","#", class: "box__title"
       .box__lists
-        .box__lists--list
-          = link_to "#", class: "box__lists--list" do
-            .image
-              = image_tag "/assets/material/logo/saba.png"
-            .text
-              %h3 product3
-              .price
-                %ul
-                  %li 30000円
-                  %li 
-                    %i.fa.fa-star 0
-                %p (税込)
-        .box__lists--list
-          = link_to "#", class: "box__lists--list" do
-            .image
-              = image_tag "/assets/material/logo/sasami.png"
-            .text
-              %h3 product3
-              .price
-                %ul
-                  %li 30000円
-                  %li 
-                    %i.fa.fa-star 0
-                %p (税込)
-        .box__lists--list
-          = link_to "#", class: "box__lists--list" do
-            .image
-              = image_tag "/assets/material/logo/kare.png"
-            .text
-              %h3 product3
-              .price
-                %ul
-                  %li 30000円
-                  %li 
-                    %i.fa.fa-star 0
-                %p (税込)
+        - @items.each do |item|
+          .box__lists--list
+            = link_to item_path(item), class: "box__lists--list" do
+              .image
+                = image_tag item.item_images.first.image_url.to_s if item.item_images.first
+              .text
+                %h3 
+                  = item.name
+                .price
+                  %ul
+                    %li
+                      = item.price
+                      円
+                    %li 
+                      %i.fa.fa-star 0
+                  %p (税込)
