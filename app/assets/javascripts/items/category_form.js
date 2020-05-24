@@ -81,7 +81,6 @@ $(function(){
       });
       appendgrandChildrenBox(insertHTML);
       $(document).on('change', '#child_category', function(){
-  // 通信成功時に親の選択肢を変えたらイベント発火。子と孫を削除。selectのidにかけるのではなく、親要素にかけないと残ってしまう
         $('#grandchildren_wrapper').remove();
         })
       })
