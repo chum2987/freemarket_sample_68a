@@ -68,7 +68,8 @@
               ブランド
               %span.select
                 任意
-            %input{placeholder: "例) シャネル", type: "text", class:"form-group__brand-select"}    
+            %div
+              = f.text_field :brand, class: "form-group__brand-select", placeholder: "例) シャネル"
           .form-group
             %label
               商品の状態
