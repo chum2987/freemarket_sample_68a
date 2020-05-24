@@ -3,7 +3,8 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @item = Item.all
+    @items = Item.all
+    @item_images = ItemImage.all
   end
   # @item.item_images.newという記述により、
   # newアクションで定義されたitemクラスのインスタンスに関連づけられた
