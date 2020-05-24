@@ -19,11 +19,15 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new] do
     member do
       get "signout"
-      get "card"
+      # get "card"
+    end
+  end
+  resources :credit_cards, only: [:index, :new, :create, :destroy] do
+    member do
+      post 'delete', to: 'credit_cards#delete'
     end
   end
   resources :phones, only: [:new, :create]
-  resources :credit_cards, only: [:index, :new, :create, :destroy]
   resources :item_images
   resources :addresses, only: [:new, :create]
   resources :categories, only: [:index, :show]

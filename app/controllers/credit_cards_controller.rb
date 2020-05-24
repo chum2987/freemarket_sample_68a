@@ -2,6 +2,7 @@ class CreditCardsController < ApplicationController
   require "payjp"
 
   def index
+    # .whereある条件にあてはまるものの最初の1つを取得する
     card = CreditCard.where(user_id: current_user.id).first
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     customer = Payjp::Customer.retrieve(card.customer_id)
@@ -27,6 +28,11 @@ class CreditCardsController < ApplicationController
     end
   end
 
-  def destroy
+  def delete
+    card = CreditCard.where(user_id: current_user.id).first
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    customer = Payjp::Customer.retrieve(card.customer_id)
+    customer.delete
+    card.delete
   end
 end
