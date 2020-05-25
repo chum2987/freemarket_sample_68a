@@ -2,11 +2,14 @@ class CreditCardsController < ApplicationController
   require "payjp"
 
   def index
-    # .whereある条件にあてはまるものの最初の1つを取得する
     card = CreditCard.where(user_id: current_user.id).first
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-    customer = Payjp::Customer.retrieve(card.customer_id)
-    @default_card = customer.cards.retrieve(card.card_id)
+    if card.blank?
+      redirect_to new_credit_card_path
+    else
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @default_card = customer.cards.retrieve(card.card_id)
+    end
   end
 
   def new
@@ -30,9 +33,13 @@ class CreditCardsController < ApplicationController
 
   def delete
     card = CreditCard.where(user_id: current_user.id).first
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-    customer = Payjp::Customer.retrieve(card.customer_id)
-    customer.delete
-    card.delete
+    if card.blank?
+    else
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer.delete
+      card.delete
+    end
+      redirect_to new_credit_card_path
   end
 end
