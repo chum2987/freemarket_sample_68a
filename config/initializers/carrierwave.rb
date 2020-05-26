@@ -12,10 +12,10 @@ CarrierWave.configure do |config|
       aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
       region: 'ap-northeast-1'
     }
-    config.fog_directory  = 'freemarket-sample-68a-shibuya'
+    config.fog_directory = 'freemarket-sample-68a-shibuya'
     config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/freemarket-sample-68a-shibuya'
   else
-    config.storage :file # 開発環境:public/uploades下に保存
+    config.storage :file # 開発環境:public/uploads下に保存
     config.enable_processing = false if Rails.env.test?
-  end  
+  end
 end
