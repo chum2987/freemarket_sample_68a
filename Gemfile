@@ -72,3 +72,5 @@ gem 'ancestry'
 # 画像の送信とリサイズができるgem
 gem 'carrierwave'
 gem 'mini_magick'
+
+gem 'fog-aws'
