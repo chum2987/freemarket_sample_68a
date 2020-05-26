@@ -39,10 +39,11 @@ class CreditCardsController < ApplicationController
       customer.delete
       @card.delete
     end
-      redirect_to new_credit_card_path
+    redirect_to new_credit_card_path
   end
 
   private
+
   def set_card
     @card = CreditCard.where(user_id: current_user.id).first if CreditCard.where(user_id: current_user.id).present?
   end
