@@ -9,12 +9,13 @@
         .mypage-cards__inner__list
           %label 登録クレジットカード情報
           .mypage-cards__inner__list__number
-            **** **** **** 0000
+            = "**** **** **** " + @default_card.last4
           .mypage-cards__inner__list_expiration-date
-            01 月
-            01 年
+            - exp_month = @default_card.exp_month.to_s
+            - exp_year = @default_card.exp_year.to_s.slice(2,3)
+            = exp_month + "/" + exp_year
           .mypage-cards__inner__list__delete
-            = link_to "#" do
+            = link_to delete_credit_card_path(current_user.id), method: :post do
               %i.fas.fa-credit-card
               %p クレジットカードを削除する
 
@@ -22,7 +23,7 @@
             .mypage-cards__inner__add-card__content
               = link_to new_credit_card_path do
                 %i.fas.fa-credit-card
-                %p クレジットカードを追加する
+                %p クレジットカードを登録する
 
           .mypage-cards__inner__method-pay
             = link_to "#" do
