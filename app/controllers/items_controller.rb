@@ -48,6 +48,8 @@ class ItemsController < ApplicationController
   end
 
   def purchase
+    @item= Item.find(params[:id])
+    @item.update(buyer_id: current_user.id)
   end
 
   def category_children
@@ -67,7 +69,7 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item)
-      .permit(:name, :price, :description, :category_id, :size, :brand, :condition, :shipping_fee, :shipping_method, :shipping_date, :seller_id, item_images_attributes: [:image_url]).merge(seller_id: current_user.id)
+      .permit(:name, :price, :description, :category_id, :size, :brand, :condition, :shipping_fee, :shipping_method, :shipping_date, :buyer_id, :seller_id, item_images_attributes: [:image_url]).merge(seller_id: current_user.id)
   end
 
 end
