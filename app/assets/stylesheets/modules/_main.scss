@@ -296,6 +296,28 @@
             margin: 0;
             z-index: auto;
           }
+          .sold {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            .back-color {
+              background-color: red transparent;
+              height: 40px;
+              position: absolute;
+              top: 0;
+              border-bottom: 60px solid transparent;
+              border-left: 60px solid #EA352D;
+            }
+            .sold-mark {
+              font-size: 15px;
+              font-family: monospace;
+              line-height: 45px;
+              transform: rotate(-45deg);
+              position: absolute;
+              font-weight: bold;
+              color: white;
+            }
+          }
           .text {
             padding: 16px;
             h3 {
