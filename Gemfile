@@ -44,12 +44,13 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'pry-rails'
   gem 'rspec-rails'
+
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
 end
 
 group :test do
- gem 'faker', "~> 2.8"
+  gem 'faker', "~> 2.8"
 end
 
 group :production do
