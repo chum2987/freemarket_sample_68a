@@ -6,7 +6,7 @@
         .mypage-user__icon
           = image_tag asset_path ("material/icon/member_photo_noimage_thumb.png"), class: 'mypage-user__icon__image'
           .mypage-user__icon__nickname
-            current user name
+            = current_user.nickname
           .mypage-user__icon__number
             .mypage-user__icon__number__evaluation
               評価
