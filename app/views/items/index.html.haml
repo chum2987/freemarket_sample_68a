@@ -124,18 +124,38 @@
       = link_to "アーカイバ","#", class: "box__title"
       .box__lists
         - @items.each do |item|
-          .box__lists--list
-            = link_to item_path(item), class: "box__lists--list" do
-              .image
+          -if item.buyer_id.present? 
+            .box__lists--list
+              = link_to item_path(item), class: "box__lists--list" do
+                .image
+                .sold
+                  .back-color
+                  .sold-mark
+                    SOLD
+                  = image_tag item.item_images.first.image_url.to_s if item.item_images.first
+                .text
+                  %h3 
+                    = item.name
+                  .price
+                    %ul
+                      %li
+                        = item.price
+                        円
+                      %li 
+                        %i.fa.fa-star 0
+                    %p (税込)
+          -else
+            .box__lists--list
+              = link_to item_path(item), class: "box__lists--list" do
                 = image_tag item.item_images.first.image_url.to_s if item.item_images.first
-              .text
-                %h3 
-                  = item.name
-                .price
-                  %ul
-                    %li
-                      = item.price
-                      円
-                    %li 
-                      %i.fa.fa-star 0
-                  %p (税込)
+                .text
+                  %h3 
+                    = item.name
+                  .price
+                    %ul
+                      %li
+                        = item.price
+                        円
+                      %li 
+                        %i.fa.fa-star 0
+                    %p (税込)
