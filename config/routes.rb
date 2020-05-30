@@ -10,10 +10,12 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get "purchase"
+      post "pay"
     end
     collection do
       get "category_children"
       get "category_grandchildren"
+      get "purchase_done"
     end
   end
   resources :users, only: [:show, :new] do
