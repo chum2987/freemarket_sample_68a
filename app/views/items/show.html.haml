@@ -24,6 +24,11 @@
       = @item.name
     %ul.item__images
       %li
+        - if @item.buyer_id.present?
+          .sold
+            .back-color
+            .sold-mark
+              SOLD
         // 1枚目に登録した画像の表示
         = image_tag @item.item_images.first.image_url, alt: "メイン画像", class: "item__images--main"
         %ul.item__images--others
@@ -106,7 +111,7 @@
           = link_to "商品を編集する", edit_item_path(@item.id), method: :get, class: "item__edit--editBtn"
           or
           = link_to "削除", item_path(@item.id), method: :delete, data: {confirm: '本当に削除しますか?'}, class: "item__edit--deleteBtn"
-      - else
+      - elsif @item.buyer_id == nil
         .item__purchase
           = link_to "購入画面に進む", purchase_item_path, method: :get, class: "item__purchase--btn"
   .comment

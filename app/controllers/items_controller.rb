@@ -3,7 +3,8 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @item = Item.all
+    @items = Item.all
+    @item_images = ItemImage.all
   end
   # @item.item_images.newという記述により、
   # newアクションで定義されたitemクラスのインスタンスに関連づけられた
@@ -32,7 +33,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to root_path
+      redirect_to item_path
     else
       render :edit
     end
@@ -66,6 +67,7 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item)
+
       .permit(:name, :price, :description, :category_id, :size, :brand, :condition, :shipping_fee, :shipping_method, :shipping_date, :seller_id, item_images_attributes: [:image_url, :destroy, :id]).merge(seller_id: current_user.id)
   end
 

@@ -43,6 +43,14 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'rubocop', require: false
   gem 'pry-rails'
+  gem 'rspec-rails'
+
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+end
+
+group :test do
+  gem 'faker', "~> 2.8"
 end
 
 group :production do
@@ -72,3 +80,5 @@ gem 'ancestry'
 # 画像の送信とリサイズができるgem
 gem 'carrierwave'
 gem 'mini_magick'
+
+gem 'fog-aws'

@@ -7,12 +7,14 @@
         .buy-main__item__inner
           .buy-main__item__box
             .buy-main__item__image
-              = image_tag('https://lh3.googleusercontent.com/proxy/WbMAgL6a5sL3UUM4oNPIXlDELAeAa5TpNMKj2ilhsSK28Dkz7-PBlhpCUTZkx1TXlA6Kcp6k91XtRQKzKT3W-IgugH6mEZjhTxDfZhOuobtViK9W3koEYYj6XL_NFLipXA', alt: 'item', height: '80px', width: '80px')
+              = (image_tag @item.item_images.first.image_url, alt: 'item', height: '80px', width: '80px')
             .buy-main__item__detail
               .buy-main__item__detail__name
-                猫の写真
+                = @item.name
               .buy-main__item__detail__price
-                %span ¥300
+                %span 
+                  = @item.price
+                  円
                 %span (税込) 送料込み
       .buy-main__item__content
         .buy-main__item__content__inner
@@ -20,6 +22,7 @@
             %li.buy-price__label
               支払い金額
             %li.buy-price__cell
-              ¥300
+              ¥
+              = @item.price
       .buy-main__item__info
         = button_tag('購入する', type: 'submit', class: 'buy-btn')
