@@ -1,28 +1,42 @@
+:css
+  header {
+    display: none;
+  }
+
+  .app-banner {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
 .buy-contents
-  .buy-main
-    .buy-main__item
-      .buy-main__item__head
-        購入内容の確認
-      .buy-main__item__main
-        .buy-main__item__inner
-          .buy-main__item__box
-            .buy-main__item__image
-              = (image_tag @item.item_images.first.image_url, alt: 'item', height: '80px', width: '80px')
-            .buy-main__item__detail
-              .buy-main__item__detail__name
-                = @item.name
-              .buy-main__item__detail__price
-                %span 
-                  = @item.price
-                  円
-                %span (税込) 送料込み
-      .buy-main__item__content
-        .buy-main__item__content__inner
-          %ul.buy-price
-            %li.buy-price__label
-              支払い金額
-            %li.buy-price__cell
-              ¥
-              = @item.price
-      .buy-main__item__info
-        = button_tag('購入する', type: 'submit', class: 'buy-btn')
+  .buy-header
+    %h1.buy-header-logo
+      = link_to image_tag('material/logo/logo.png', alt: 'header', height: '49px', width: '185px', class: 'image')
+    .buy-main
+      .buy-main__item
+        .buy-main__item__head
+          購入内容の確認
+        .buy-main__item__main
+          .buy-main__item__inner
+            .buy-main__item__box
+              .buy-main__item__image
+                = image_tag('material/logo/kare.png', alt: 'item', height: '80px', width: '80px')
+              .buy-main__item__detail
+                .buy-main__item__detail__name
+                  カレー
+                .buy-main__item__detail__price
+                  %span ¥500
+                  %span (税込) 送料込み
+        .buy-main__item__content
+          .buy-main__item__content__inner
+            %ul.buy-price
+              %li.buy-price__label
+                支払い金額
+              %li.buy-price__cell
+                ¥500
+        .buy-main__item__info
+          = button_tag('購入する', type: 'submit', class: 'buy-btn')
+    .registration-footer
+      = render 'devise/registrations/registration-footer'
