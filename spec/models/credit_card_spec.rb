@@ -15,6 +15,7 @@ describe CreditCard do
   # Credit_Cardクラスにあるcreateメソッドをテストするまとまりという意味
   describe '#create' do
     # it~ 何をテストしたいかの説明
+    # 全ての条件が整っている場合に「登録ができること
     it "user_idとcard_idとcustomer_idがあると登録できる" do
       user = create(:user)
       card = build(:credit_card, user_id: user.id)
