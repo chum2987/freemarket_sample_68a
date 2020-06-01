@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @items = Item.all
+    @items = Item.limit(3).order('id DESC')
     @item_images = ItemImage.all
   end
   # @item.item_images.newという記述により、
@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to root_path
+      redirect_to item_path
     else
       render :edit
     end
