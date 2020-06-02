@@ -66,5 +66,36 @@ describe User do
       user.valid?
       expect(user.errors[:password]).to include("can't be blank")
     end
+
+    it "passwordが7文字未満では登録できない" do
+      user = build(:user, password: "aaaaaa")
+      user.valid?
+      expect(user.errors[:password]).to include("is too short (minimum is 7 characters)")
+    end
+
+    it "既に登録されているemailアドレスでは登録できない" do
+      user = create(:user)
+      another_user = build(:user, email: user.email)
+      another_user.valid?
+      expect(another_user.errors[:email]).to include("has already been taken")
+    end
+
+    it "emailアドレスに@がないと登録できない" do
+      user = build(:user, email: "email")
+      user.valid?
+      expect(user.errors[:email]).to include("is invalid")
+    end
+
+    it "family_nameが半角の場合登録できない" do
+      user = build(:user, family_name: "YAMADA")
+      user.valid?
+      expect(user.errors[:family_name]).to include("is invalid")
+    end
+
+    it "first_nameが半角の場合登録できない" do
+      user = build(:user, first_name: "TARO")
+      user.valid?
+      expect(user.errors[:first_name]).to include("is invalid")
+    end
   end
 end

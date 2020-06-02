@@ -9,6 +9,6 @@ FactoryBot.define do
     birth_month        {01}
     birth_day          {01}
     email              {"t@gmail.com"}
-    password           {"password"}
+    password           {"aaaaaaa"}
   end
 end
