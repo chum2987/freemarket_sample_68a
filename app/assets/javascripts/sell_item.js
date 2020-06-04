@@ -1,7 +1,7 @@
 // 1 document ＝ 開いているWebページのDOMツリーが入っているオブジェクト
 // 2 turbolinks:load ＝ 初回読み込み、リロード、ページ切り替えで動く。
 // 3 画像選択ボタンのinputを生成する関数
-$(document).on('turbolinks:load', ()=> {
+$(function(){
 
   // 1 const = 値書き換えを禁止した変数を宣言する方法(例:消費税率) 
   // 2 この変数buildFileFieldに入れているdiv class〜は、viewの「ファイルを選択ボタン」の箇所
