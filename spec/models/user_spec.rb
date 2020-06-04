@@ -1,7 +1,7 @@
 require 'rails_helper'
 describe User do
   describe '#create' do
-    it "全ての条件が整っている場合に登録できる" do
+    it "全ての条件が入力されていれば登録できる" do
     user = build(:user)
     user.valid?
     expect(user).to be_valid
@@ -73,6 +73,18 @@ describe User do
       expect(user.errors[:password]).to include("is too short (minimum is 7 characters)")
     end
 
+    it "passwordが存在してもpassword_confirmation(確認用password)がなければ登録できない" do
+      user = build(:user, password_confirmation: "")
+      user.valid?
+      expect(user.errors[:password_confirmation]).to include("doesn't match Password")
+    end
+
+    it "passwordとpassword_confirmation(確認用password)が一致しなければ登録できない" do
+      user = build(:user, password_confirmation: "aaabbb")
+      user.valid?
+      expect(user.errors[:password_confirmation]).to include("doesn't match Password")
+    end
+
     it "既に登録されているemailアドレスでは登録できない" do
       user = create(:user)
       another_user = build(:user, email: user.email)
@@ -96,6 +108,18 @@ describe User do
       user = build(:user, first_name: "TARO")
       user.valid?
       expect(user.errors[:first_name]).to include("is invalid")
+    end
+
+    it "family_name_kanaが半角の場合登録できない" do
+      user = build(:user, family_name_kana: "ﾔﾏﾀﾞ")
+      user.valid?
+      expect(user.errors[:family_name_kana]).to include("is invalid")
+    end
+
+    it "first_name_kanaが半角の場合登録できない" do
+      user = build(:user, first_name_kana: "ﾀﾛｳ")
+      user.valid?
+      expect(user.errors[:first_name_kana]).to include("is invalid")
     end
   end
 end
