@@ -20,6 +20,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
+      @item.item_images.new
       render :new
     end
   end
