@@ -25,4 +25,5 @@
               ¥
               = @item.price
       .buy-main__item__info
-        = button_tag('購入する', type: 'submit', class: 'buy-btn')
+        = form_tag(action: :pay, method: :post) do
+          = button_tag('購入する', type: 'submit', class: 'buy-btn')

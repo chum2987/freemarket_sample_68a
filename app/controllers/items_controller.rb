@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy, :purchase]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :purchase, :pay]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -48,6 +48,20 @@ class ItemsController < ApplicationController
   end
 
   def purchase
+  end
+
+  def pay
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    charge = Payjp::Charge.create(
+    amount: @item.price,
+    customer: current_user.credit_card.customer_id,
+    currency: 'jpy'
+    )
+    redirect_to purchase_done_items_path
+    @item.update(buyer_id: current_user.id)
+  end
+
+  def purchase_done
   end
 
   def category_children
