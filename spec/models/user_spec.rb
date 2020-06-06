@@ -98,6 +98,12 @@ describe User do
       expect(user.errors[:email]).to include("is invalid")
     end
 
+    it "emailアドレスにドメインがないと登録できない" do
+      user = build(:user, email: "a@.com")
+      user.valid?
+      expect(user.errors[:email]).to include("is invalid")
+    end
+
     it "family_nameが半角の場合登録できない" do
       user = build(:user, family_name: "YAMADA")
       user.valid?
