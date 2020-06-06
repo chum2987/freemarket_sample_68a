@@ -1,5 +1,4 @@
 require 'rails_helper'
-# 全てのspecファイルに書き込む
 
 # modelのクラス名CreditCard
 describe CreditCard do

@@ -24,6 +24,8 @@ Style/StringLiterals:
 # "Line is too long"を無効
 Metrics/LineLength:
   Enabled: false
+  Exclude:
+    - 'spec/**/*'
 
 #'frozen_string_literal: true'を無効
 Style/FrozenStringLiteralComment:
