@@ -2,9 +2,9 @@ require 'rails_helper'
 describe User do
   describe '#create' do
     it "全ての条件が入力されていれば登録できる" do
-    user = build(:user)
-    user.valid?
-    expect(user).to be_valid
+      user = build(:user)
+      user.valid?
+      expect(user).to be_valid
     end
 
     it "nicknameがなければ登録できない" do
