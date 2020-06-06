@@ -25,11 +25,6 @@ Style/StringLiterals:
 Metrics/LineLength:
   Enabled: false
 
-# specディレクトリで書かれたMetrics/LineLengthを無効
-Metrics/LineLength:
-  Exclude:
-    - 'spec/**/*'
-
 #'frozen_string_literal: true'を無効
 Style/FrozenStringLiteralComment:
   Enabled: false
