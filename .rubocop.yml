@@ -28,3 +28,7 @@ Metrics/LineLength:
 #'frozen_string_literal: true'を無効
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+# Use only ascii symbols in commentsを無効
+Style/AsciiComments:
+  Enabled: false
