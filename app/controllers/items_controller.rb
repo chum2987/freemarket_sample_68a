@@ -53,12 +53,15 @@ class ItemsController < ApplicationController
   def pay
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     charge = Payjp::Charge.create(
-      amount: @item.price、
+      amount: @item.price,
       customer: current_user.credit_card.customer_id,
       currency: 'jpy'
     )
-    redirect_to root_path
-    @item.update(buyer_id: current_user.id)
+    if @item.update(buyer_id: current_user.id)
+      redirect_to root_path
+    else
+      redirect_to pay_item_path
+    end
   end
 
   def category_children
