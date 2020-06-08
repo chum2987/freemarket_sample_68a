@@ -33,9 +33,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
           $("#exp_year").removeAttr("name");
           // .appendでHTML要素を追加
           $("#card_token").append(
-            $(`<input type="hidden" name="payjpToken">`).val(response.id)
+            $(`<input type="hidden" name="payjp-token">`).val(response.id)
           );
-          document.inputForm.submit();
+          $("#charge-form").get(0).submit();
           alert("登録が完了しました");
         } else {
           alert("カード情報が正しくありません");
