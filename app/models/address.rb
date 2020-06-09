@@ -1,7 +1,9 @@
 class Address < ApplicationRecord
   belongs_to :user
 
-  validates :postal_code, :prefecture_name, :city, :street, presence: true
+  validates :prefecture_name, :city, :street, presence: true
+
+  validates :postal_code, presence: true,format: {with: /\A\d{7}\z/ }
 
   validates :family_name, :first_name, presence: true, format: { with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/ }
 
