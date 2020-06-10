@@ -38,19 +38,19 @@ describe User do
     end
 
     it "birth_yearがなければ登録できない" do
-      user = build(:user, birth_year: "")
+      user = build(:user, birth_year: nil)
       user.valid?
       expect(user.errors[:birth_year]).to include("can't be blank")
     end
 
     it "birth_monthがなければ登録できない" do
-      user = build(:user, birth_month: "")
+      user = build(:user, birth_month: nil)
       user.valid?
       expect(user.errors[:birth_month]).to include("can't be blank")
     end
 
     it "birth_dayがなければ登録できない" do
-      user = build(:user, birth_day: "")
+      user = build(:user, birth_day: nil)
       user.valid?
       expect(user.errors[:birth_day]).to include("can't be blank")
     end
