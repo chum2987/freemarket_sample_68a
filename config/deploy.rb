@@ -27,6 +27,9 @@ set :keep_releases, 5
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 set :linked_files, %w{ config/secrets.yml }
+set :default_env, {
+  Payjp.api_key: ENV["PAYJP_PRIVATE_KEY"]
+}
 
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
