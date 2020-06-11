@@ -4,7 +4,7 @@ FactoryBot.define do
     first_name       { "太朗" }
     family_name_kana { "ヤマダ" }
     first_name_kana  { "タロウ" }
-    postal_code      { 1234567 }
+    postal_code      { 1_234_567 }
     prefecture_name  { "千葉県" }
     city             { "浦安" }
     street           { 111 }
