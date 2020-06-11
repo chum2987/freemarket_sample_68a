@@ -27,7 +27,7 @@ set :keep_releases, 5
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 set :linked_files, %w{ config/secrets.yml }
-set :linked_files, %w{ /.env }
+set :default_env, %w{ /.env }
 
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
