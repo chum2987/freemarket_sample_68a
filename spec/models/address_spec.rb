@@ -95,7 +95,7 @@ describe Address do
 
     it "phone_numberが入力されていなくても登録でききる" do
       user = create(:user)
-      address = build(:address, user_id: user.id, phone_number: nil)
+      address = build(:address, user_id: user.id, phone_number: "")
       address.valid?
       expect(address).to be_valid
     end
