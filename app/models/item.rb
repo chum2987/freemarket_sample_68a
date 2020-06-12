@@ -14,7 +14,7 @@ class Item < ApplicationRecord
 
   with_options presence: true do
     validates :name, presence: {message: "入力してください"}
-    validates :price, presence: {message: "300以上9999999以下で入力してください"}
+    validates :price, presence: true, numericality:{only_integer:true,greater_than_or_equal_to:300,less_than_or_equal_to:9999999, message: "300以上9999999以下で入力して下さい"}
     validates :description, presence: {message: "入力してください"}
     validates :category_id, presence: {message: "選択してください"}
     validates :condition, presence: {message: "選択してください"}
