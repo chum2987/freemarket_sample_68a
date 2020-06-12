@@ -9,5 +9,6 @@ class Address < ApplicationRecord
 
   validates :family_name_kana, :first_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
 
+  # 数字のみの入力を受けつけ、nilでも保存することができる
   validates :phone_number, :numericality => { :allow_blank => true }
 end
