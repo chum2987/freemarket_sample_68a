@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy, :purchase]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :purchase, :pay]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -20,6 +20,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
+      @item.item_images.new
       render :new
     end
   end
@@ -50,6 +51,20 @@ class ItemsController < ApplicationController
   def purchase
   end
 
+  def pay
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    charge = Payjp::Charge.create(
+      amount: @item.price,
+      customer: current_user.credit_card.customer_id,
+      currency: 'jpy'
+    )
+    if @item.update(buyer_id: current_user.id)
+      redirect_to root_path
+    else
+      redirect_to pay_item_path
+    end
+  end
+
   def category_children
     @category_children = Category.find(params[:productcategory]).children
     # Ajax通信で送られてきたデータをparamsで受け取りchildrenで子を取得
@@ -66,8 +81,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item)
-      .permit(:name, :price, :description, :category_id, :size, :brand, :condition, :shipping_fee, :shipping_method, :shipping_date, :buyer_id, :seller_id, item_images_attributes: [:image_url]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name, :price, :description, :category_id, :size, :brand, :condition, :shipping_fee, :shipping_method, :shipping_date, :seller_id, item_images_attributes: [:image_url, :_destroy, :id]).merge(seller_id: current_user.id)
   end
 
 end

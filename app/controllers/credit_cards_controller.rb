@@ -17,10 +17,10 @@ class CreditCardsController < ApplicationController
 
   def create
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-    if params["payjpToken"].blank?
+    if params["payjp-token"].blank?
       redirect_to credit_cards_path
     else
-      customer = Payjp::Customer.create(card: params["payjpToken"])
+      customer = Payjp::Customer.create(card: params["payjp-token"])
 
       @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save

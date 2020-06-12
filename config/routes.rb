@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get "purchase"
+      post "pay"
     end
     collection do
       get "category_children"

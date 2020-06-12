@@ -68,7 +68,8 @@
               ブランド
               %span.select
                 任意
-            %input{placeholder: "例) シャネル", type: "text", class:"form-group__brand-select"}    
+            %div
+              = f.text_field :brand, class: "form-group__brand-select", placeholder: "例) シャネル"
           .form-group
             %label
               商品の状態
@@ -131,7 +132,7 @@
                   %p
                     ￥
                   %div
-                    = f.number_field :price, min:1, max:9999999, class: "sell-price-input__price-select", placeholder: "0"
+                    = f.number_field :price, min:1, max:9999999, class: "sell-price-input__price-select", id: "price_calc", placeholder: "0"
                 .sell-price-note
                   %p
                     300以上9999999以下で入力して下さい
@@ -139,14 +140,14 @@
               .clearfix
                 .sell-price-fee
                   販売手数料  (10%)
-                .sell-price-input
-                  .right
+                  .right_bar
+                    ー
             %li.price-group-border
               .clearfix
                 .sell-price-profit
                   販売利益
-                .sell-price-input
-                  .right
+                  .right_bar_2
+                    ー
       .sell-main-content
         .sell-main__exhibit
           = f.submit "変更する", class: "sell-main__btn sell-main__btn--exhibition"

@@ -33,7 +33,7 @@
 
   }
   &__content {
-    padding: 40px 0 ;
+    padding: 40px 0;
     height: 100%;
     border-bottom: solid 1px #efefef;
   }
@@ -219,11 +219,10 @@
   i{
     position: absolute;
     right: 70px;
-    top:30%;
+    top:16px;
     color: #888;
     z-index: 10;
     font-size: 20px;
-    
   }
   select{
     width: 620px;
@@ -239,11 +238,3 @@
     appearance: none;
   }
 }  
-.terms{
-  font-size: 11px;
-  padding: 0 55px 60px;
-  &--links {
-    text-decoration: none;
-    color: #66CCFF;
-  }
-}

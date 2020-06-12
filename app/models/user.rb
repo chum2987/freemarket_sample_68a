@@ -12,6 +12,7 @@ class User < ApplicationRecord
     validates :birth_year
     validates :birth_month
     validates :birth_day
+    validates :password, length: { minimum: 7 }
   end
 
   validates :email, presence: true, uniqueness: true, format: { with: /\A\S+@\S+\.\S+\z/ }
