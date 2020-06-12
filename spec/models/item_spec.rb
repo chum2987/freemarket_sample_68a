@@ -22,7 +22,7 @@ describe Item do
     it "価格がなければ登録できない" do
       item = build(:item, price: "")
       item.valid?
-      expect(item.errors[:price]).to include("300以上9999999以下で入力してください")
+      expect(item.errors[:price]).to include("300以上9999999以下で入力して下さい")
     end
 
     it "商品の説明がなければ登録できない" do
@@ -59,6 +59,18 @@ describe Item do
       item = build(:item, shipping_date: "")
       item.valid?
       expect(item.errors[:shipping_date]).to include("選択してください")
+    end
+
+    it "値段が300より小さかった時に出品できないこと" do
+      item = build(:item, price: 299)
+      item.valid?
+      expect(item.errors[:price]).to include("300以上9999999以下で入力して下さい")
+    end
+
+    it "値段が9999999より大きかった時に出品できないこと" do
+      item = build(:item, price: 10000000)
+      item.valid?
+      expect(item.errors[:price]).to include("300以上9999999以下で入力して下さい")
     end
   end
 end
