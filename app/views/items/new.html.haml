@@ -135,7 +135,7 @@
                     = f.number_field :price, min:1, max:9999999, class: "sell-price-input__price-select", id: "price_calc", placeholder: "0"
                 .sell-price-note
                   %p
-                    300以上9999999以下で入力して下さい
+                    %p.error=@item.errors.messages[:price][0]
             %li.price-group-border
               .clearfix
                 .sell-price-fee
