@@ -25,7 +25,7 @@ RSpec.describe AddressesController, type: :controller do
         it 'addressを保存すること' do
           expect do
             subject
-            expect{ subject }.to change{ Address.count }.by(1)
+            expect{ subject }.to change { Address.count }.by(1)
           end
         end
 
@@ -44,7 +44,7 @@ RSpec.describe AddressesController, type: :controller do
         it 'addressを保存しないこと' do
           expect do
             subject
-            expect{ subject }.to change{ Address.count }.by(0)
+            expect{ subject }.to change { Address.count }.by(0)
           end
         end
 
