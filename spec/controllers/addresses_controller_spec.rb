@@ -4,16 +4,16 @@ describe AddressesController do
   let(:user) { create(:user) }
 
   context 'ログイン済ユーザー' do
-    before do
-      sign_in user
-    end
-
-  describe 'GET #new' do
-    it "new.html.haml(住所登録ページ)に遷移すること" do
-      get :new
-      expect(response).to render_template :new
-    end
+  before do
+    sign_in user
   end
+
+describe 'GET #new' do
+  it "new.html.haml(住所登録ページ)に遷移すること" do
+    get :new
+    expect(response).to render_template :new
+  end
+end
 
   describe 'POST #create' do
     context 'addressの保存に成功した場合' do
@@ -25,7 +25,7 @@ describe AddressesController do
     it 'addressを保存すること' do
       expect do
         subject
-        expect{subject}.to change{ Address.count }.by(1)
+        expect{ subject }.to change{ Address.count }.by(1)
       end
     end
 
@@ -35,29 +35,29 @@ describe AddressesController do
     end
   end
 
-      context '保存に失敗した場合' do
-      subject do
-        address_params = attributes_for(:address, postal_code: nil)
-        post :create, params: { address: address_params }
+  context '保存に失敗した場合' do
+    subject do
+      address_params = attributes_for(:address, postal_code: nil)
+      post :create, params: { address: address_params }
+    end
+
+      it 'addressを保存しないこと' do
+        expect do
+          subject
+          expect{ subject }.to change{ Address.count }.by(0)
+        end
       end
 
-        it 'addressを保存しないこと' do
-          expect do
-            subject
-            expect{ subject }.to change{ Address.count }.by(0)
-          end
-        end
-
-        it 'new.html.haml(住所登録ページ)に遷移すること' do
-          subject
-          expect(response).to render_template :new
+      it 'new.html.haml(住所登録ページ)に遷移すること' do
+      subject
+      expect(response).to render_template :new
       end
     end
   end
 end
 
   context 'ログインしていない場合' do
-    let(:user){ create(:user) }
+    let(:user) { create(:user) }
 
     it 'topページにリダイレクトすること' do
       post :create
