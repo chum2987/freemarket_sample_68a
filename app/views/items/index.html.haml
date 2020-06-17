@@ -11,7 +11,8 @@
       .content__btn
         .app
           = link_to "#", class: "app" do
-            = image_tag asset_path ("material/logo/appstore-logo.png"), class: "img"
+            -# = image_tag (asset_path ("material/logo/appstore-logo.png"), option = {class: "app-logo"})
+            = image_tag "material/logo/appstore-logo.png", class: "app-logo"
         .google
           = link_to "#", class: "google" do
             = image_tag asset_path ("material/logo/google-logo.png"), class: "img"
