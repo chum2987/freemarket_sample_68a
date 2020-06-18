@@ -49,12 +49,12 @@ describe ItemsController do
     end
     # アクション内で定義するインスタンス変数の値が期待したものになるか
     it "リクエストが成功すること" do
-      get :show, params: {id: @item.id}
+      get :show, params: { id: @item.id }
       expect(response.status).to eq(200)
     end
     # アクションが呼ばれたあと期待したビューが表示されるか
     it "show.html.hamlに遷移すること" do
-      get :show, params: {id: @item.id}
+      get :show, params: { id: @item.id }
       expect(response).to render_template :show
     end
     # アクション内で定義するインスタンス変数の値が期待したものになるか
@@ -74,12 +74,12 @@ describe ItemsController do
     end
     # アクション内で定義するインスタンス変数の値が期待したものになるか
     it "リクエストが成功すること" do
-      get :edit, params: {id: @item.id}
+      get :edit, params: { id: @item.id }
       expect(response.status).to eq(200)
     end
     # アクションが呼ばれたあと期待したビューが表示されるか
     it "edit.html.hamlに遷移すること" do
-      get :edit, params: {id: @item.id}
+      get :edit, params: { id: @item.id }
       expect(response).to render_template :edit
     end
   end
