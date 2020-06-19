@@ -7,7 +7,7 @@ $(function() {
   const buildFileField = (index)=> {
     var html = `<div class="js-file_group" data-index="${index}">
     <input class="js-file" type="file"
-    name="item[item_images_attributes][${index}][item_image]"
+    name="item[item_images_attributes][${index}][image_url]"
     id="item_item_images_attributes_${index}_item_image"><br>
     <div class="js-remove">削除</div>
     </div>`;
