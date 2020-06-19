@@ -4,7 +4,7 @@
 $(function() {
   // 1 const = 値書き換えを禁止した変数を宣言する方法(例:消費税率) 
   // 2 この変数buildFileFieldに入れているdiv class〜は、viewの「ファイルを選択ボタン」の箇所
-  var buildFileField = (index)=> {
+  const buildFileField = (index)=> {
     const html = `<div class="js-file_group" data-index="${index}">
     <input class="js-file" type="file"
     name="item[item_images_attributes][${index}][image_url]"
