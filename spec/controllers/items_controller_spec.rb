@@ -29,13 +29,22 @@ describe ItemsController do
         expect(assigns(:parents)).to eq categories
       end
 
+      it "@itemに正しい値が入っていること" do
+        item = build(:item, seller_id: user[:id], category_id: category[:id])
+        expect(assigns(:item)).to be_a_new(Item)
+      end
+
     end
 
     context 'ログインしていない場合' do
+
+      it "ログインページに遷移する" do
+        get :new
+        expect(response).to redirect_to(new_user_session_path)
+      end
+
     end
 
   end
-
-  # 以下、その他のアクションのテストコードを生成
 
 end
