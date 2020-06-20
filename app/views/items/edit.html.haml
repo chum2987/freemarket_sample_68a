@@ -27,11 +27,21 @@
           最大10枚までアップロードできます
         .sell-main__image-box
           #image-box__container
-            = f.fields_for :item_images do |i|
-              .js-file_group{"data-index" => "#{i.index}"}
-                = i.file_field :image_url, class: 'js-file'
+            %div#previews
+              - if @item.persisted?
+                - @item.item_images.each_with_index do |image, i|
+                  = image_tag image.image_url.url, data: { index: i}, width: "100", height: "100"
+            = f.fields_for :item_images do |image|
+              .js-file_group{"data-index" => "#{image.index}"}
+                = image.file_field :image_url, class: 'js-file'
                 %br/
                 %span.js-remove 削除
+              - if @item.persisted?
+                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+            - if @item.persisted?
+              .js-file_group{"data-index" => "#{@item.item_images.count}"}
+                = file_field_tag :image_url, name: "item[item_images_attributes][#{@item.item_images.count}][image_url]", class: 'js-file'
+                .js-remove 削除
       .sell-main__content
         .form-group
           %label
