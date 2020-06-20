@@ -94,4 +94,8 @@ describe ItemsController do
       expect(response).to render_template :edit
     end
   end
+<<<<<<< HEAD
+=======
+
+>>>>>>> 083c39cd2b271520ba24cad4aef621e7e48ece8e
 end
