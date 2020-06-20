@@ -289,12 +289,15 @@
           a {
             text-decoration: none;
           }
-          .image {
-            width: 220px;
-            position: relative;
-            overflow: hidden;
-            margin: 0;
+          img{
+            height: 200px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
             z-index: auto;
+            object-fit: cover;
           }
           .sold {
             position: relative;
