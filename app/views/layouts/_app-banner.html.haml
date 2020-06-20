@@ -1,4 +1,4 @@
-= image_tag asset_path ("material/pict/bg-appBanner-pict.jpg")
+= image_tag "material/pict/bg-appBanner-pict.jpg", class: "banner-image"
 .app-banner__inner
   .app-banner__inner__text
     %h2
@@ -7,7 +7,7 @@
   .app-banner__inner__icon
     .app-banner__inner__icon__left
       = link_to "#" do
-        = image_tag asset_path ("material/logo/appstore-logo.png")
+        = image_tag asset_path ("material/logo/app-store.svg")
     .app-banner__inner__icon__right
       = link_to "#" do
-        = image_tag asset_path ("material/logo/googleplay.png")
+        = image_tag asset_path ("material/logo/google-play.svg")

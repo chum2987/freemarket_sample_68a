@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     background-color: skyblue;
-      img {
+      .back-img {
         height: 100%;
         width: 100%;
         object-fit: cover;
@@ -36,7 +36,7 @@
         margin: 24px 0 0 0;
         .app {
           a {
-            img {
+            .app-logo {
               width: 160px;
               height:50px;
               margin:10px;
@@ -45,7 +45,7 @@
         }
         .google {
           a {
-            img {
+            .google-logo {
               width: 160px;
               height:50px;
               margin:10px;
@@ -150,7 +150,7 @@
     align-items: center;
     background-color: teal;
     position: relative;
-      img {
+      .sub-image {
         height: 100%;
         width: 100%;
         object-fit: cover;
