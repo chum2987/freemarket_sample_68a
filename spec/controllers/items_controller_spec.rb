@@ -47,4 +47,52 @@ describe ItemsController do
 
   end
 
+  # HTTPメソッドとアクションを指定する。
+  describe "GET #show" do
+    before do
+      login user
+      get :new
+      @item = Item.new(
+        id: "1",
+        name: "saba",
+        price: "500"
+      )
+    end
+    # アクション内で定義するインスタンス変数の値が期待したものになるか
+    it "リクエストが成功すること" do
+      get :show, params: { id: @item.id }
+      expect(response.status).to eq(200)
+    end
+    # アクションが呼ばれたあと期待したビューが表示されるか
+    it "show.html.hamlに遷移すること" do
+      get :show, params: { id: @item.id }
+      expect(response).to render_template :show
+    end
+    # アクション内で定義するインスタンス変数の値が期待したものになるか
+    it "@parentsに正しい値が入っていること" do
+      categories = create_list(:category, 13)
+      expect(assigns(:parents)).to eq categories
+    end
+  end
+
+  describe "GET #edit" do
+    before do
+      @item = Item.new(
+        id: "1",
+        name: "saba",
+        price: "500"
+      )
+    end
+    # アクション内で定義するインスタンス変数の値が期待したものになるか
+    it "リクエストが成功すること" do
+      get :edit, params: { id: @item.id }
+      expect(response.status).to eq(200)
+    end
+    # アクションが呼ばれたあと期待したビューが表示されるか
+    it "edit.html.hamlに遷移すること" do
+      get :edit, params: { id: @item.id }
+      expect(response).to render_template :edit
+    end
+  end
+
 end
