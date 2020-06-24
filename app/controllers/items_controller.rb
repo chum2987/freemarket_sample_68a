@@ -36,12 +36,10 @@ class ItemsController < ApplicationController
     #カテゴリーを孫まで選択していない場合、category_idが"---"と送られてくる。それは通したくないので条件分岐。
     if item_params[:category_id] == "---"
       render :edit
+    elsif @item.update(item_params)
+      redirect_to item_path
     else
-      if @item.update(item_params)
-        redirect_to item_path
-      else
-        render :edit
-      end
+      render :edit
     end
   end
 
