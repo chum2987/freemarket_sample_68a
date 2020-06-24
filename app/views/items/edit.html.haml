@@ -69,8 +69,14 @@
                 必須
             %div
               .select-form
-                %i.fa.fa-chevron-down
-                = f.collection_select(:category_id, @parents, :id, :name, {prompt: "選択して下さい"}, {id: "category_select"})
+                -#元々データベースに保存されていたカテゴリーを表示するように記載。
+                .listing-select-wrapper--edit
+                  .listing-select-wrapper--edit__parent
+                    = f.collection_select :category_id, Category.roots, :id, :name ,{prompt: "選択してください", selected:  @item.category.parent.parent_id}, {required: true, class: 'listing-select-wrapper--edit__parent--select', id: 'parent_category_edit'}
+                  .listing-select-wrapper--edit__child
+                    = f.collection_select :category_id, @item.category.parent.parent.children, :id, :name ,{prompt: "選択してください", selected: @item.category.parent_id}, {required: true, class: 'listing-select-wrapper--edit__child--select', id: 'child_category_edit'}
+                  .listing-select-wrapper--edit__grandchild
+                    = f.collection_select :category_id, @item.category.parent.children, :id, :name ,{prompt: "選択してください", selected: @item.category.id}, {required: true, class: 'listing-select-wrapper--edit__grandchild--select', id: 'grandchild_category_edit'}
               .product_select-children
                 %p.error=@item.errors.messages[:category_id][0]
           .form-group
